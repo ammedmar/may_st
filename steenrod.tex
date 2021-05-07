@@ -1,0 +1,100 @@
+
+\section{Steenrod-Adem structures}
+
+We now introduce an operadic formulation of a structure giving rise to Steenrod operations at every prime. It is based on \cites{steenrod47products, steenrod53symmetric, steenrod53cyclic, may70generalapproach}, and takes a viewpoint that emphasizes the integral structure needed to define them and prove their relations at every prime. For a more geometric treatment we refer the reader to \cites{may72geometry, may76homology, lawson2020n}.
+
+\begin{definition} \label{def: Steenrod-Adem structure}
+	A \textit{Steenrod-Adem structure} on an operad $\mathcal O$ is a 
+	morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$-operad
+	\begin{equation*}
+	\begin{tikzcd}[column sep = normal, row sep = small]
+	& \mathcal R \arrow[dr, "\phi", out=0] & \\
+	\mathcal W \arrow[ur, "\iota", in=180] \arrow[rr, "\psi"] & & \mathcal O
+	\end{tikzcd}
+	\end{equation*}
+	such that $\iota$ is a quasi-isomorphism and $\phi$ a morphism of operads.
+\end{definition}
+
+\begin{remark} \label{rmk: Deligne conjecture}
+	In \cite{GerstenhaberVoronov} an operad morphism $\mathcal{A}ssoc \to \mathcal O$ is referred to as a \textit{multiplication} on $\mathcal O$. In this language, a choice of factorization for a Steenrod-Adem structure defines in particular a \textit{commutative multiplication}.
+\end{remark}
+
+\begin{definition}
+	Let $A$ be a chain complex. A Steenrod-Adem structure on $\mathrm{End}_A$ is referred to as one on $A$. Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod} $(r, i)$-\textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
+\end{definition}
+
+\begin{remark}
+	Restricting a Steenrod-Adem structure on a chain complex $A$ to a given arity $r$ corresponds to specifying a map $\theta \colon \mathcal W(r) \otimes A^{\otimes r} \to A$. This pair $(A, \theta)$ is an object in May's category $\mathfrak{C}(\mathrm C_r, \infty, \Z)$ introduced in \cite{may70generalapproach} Definition 2.1. Furthermore, the restriction to arity $r^2$ enhances this pair to an \textit{Adem object} as described in Definition 4.1 loc. cit.
+\end{remark}
+
+A Steenrod-Adem structure on a chain complex $A$ allows us to define operations on its $\mathbb{F}_p$-homology for every prime $p$. These operations are structurally different if $p$ is even or odd. Using the previous Remark, the definitions below recover Steenrod's original definition for the cohomology of spaces and that of Araki-Kudo-Dyer-Lashof operations for the homology of infinite loop spaces.
+
+For the rest of this section $A$ is a chain complex equipped with a Steenrod-Adem structure.
+
+\begin{definition}
+	For any prime $p$, the $\mathbb{F}_p$-linear map
+	\begin{equation*}
+	D^p_i : (A \otimes \mathbb{F}_p) \to (A \otimes \mathbb{F}_p)
+	\end{equation*}
+	is defined by sending $a$ to the Steenrod \mbox{$(p, i)$-product} of $(a \otimes \cdots \otimes a) \in (A \otimes \mathbb{F}_p)^{\otimes p}$ if $i \geq 0$ and to $0$ otherwise.
+\end{definition}
+
+We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q + i$.
+
+\begin{definition}
+	For any integer $s$, the \textit{Steenrod operation}
+	\begin{equation*}
+	P_s : H_\bullet(A; \mathbb{F}_2) \to H_{\bullet + s}(A; \mathbb{F}_2)
+	\end{equation*}
+	is defined by sending the class represented by a cycle $a \in (A \otimes \mathbb{F}_2)$ of degree $q$ to the class represented by $D^2_{s-q}(a)$.
+\end{definition}
+
+Notice that the Steenrod squares are determined by the Steenrod $(2,i)$-products with $\mathbb{F}_2$-coefficients. These binary operations are known as cup-$i$ products. In a similar way, the operations $P$ and $\beta P$ defined below for odd primes are determined by the Steenrod $\big(p, k(p-1)-\varepsilon\big)$-products for $\varepsilon \in \{0,1\}$. We can explain the appearance of these specific Steenrod products as follows. The increase on the degree of a $q$-cycle after applying $D^p_{k(p-1)-\varepsilon}$ to it is $(p-1)(q+k) - \varepsilon$, which can be rewritten as $2t(p-1) - \varepsilon$ if $q$ is even an $(2t+1)(p-1) - \varepsilon$ if $q$ is odd. According to Lemma \ref{lem: Thom's theorem}, these are the only homologically non-trivial cases.
+
+\begin{definition} \label{def: Steenrod operations at odd prime}
+	For any integer $s$, the \textit{Steenrod operations}
+	\begin{equation*}
+	P_s : H_\bullet(A; \mathbb{F}_p) \to H_{\bullet + 2s(p-1)}(A; \mathbb{F}_p)
+	\end{equation*}
+	and
+	\begin{equation*}
+	\beta P_s : H_\bullet(A; \mathbb{F}_p) \to H_{\bullet + 2s(p-1) - 1}(A; \mathbb{F}_p)
+	\end{equation*}
+	are defined by sending the class represented by a cycle $a \in (A \otimes \mathbb{F}_p)$ of degree $q$ to the classes represented respectively for $\varepsilon \in\{0,1\}$ by
+	\begin{equation*}
+	(-1)^s \nu(q) D^p_{(2s-q)(p-1)-\varepsilon}(a)
+	\end{equation*}
+	where $\nu(q) = (-1)^{q(q-1)m/2}(m!)^q$ and $m = (p-1)/2$.
+\end{definition}
+
+\begin{remark}
+	The use of the coefficient function $\nu(q)$ is motivated by the identity $D_{q(p-1)}^p(a) = \nu(q)a$ in the case of spaces (see Eq. 6.1. in \cite{steenrod53cyclic}). The notation $\beta P_s$ is motivated by the relationship of this operator and the Bockstein of the reduction $\mathbb Z \to \mathbb Z/p\mathbb Z$.
+\end{remark}
+
+Steenrod operations satisfy the Cartan and Adem relations. Below we state the subset of these relations that is most commonly used and refer to Sections 2 and 4 of \cite{may70generalapproach} for a complete list and proofs.
+\begin{lemma}
+	Let $A$ be equipped with a Steenrod-Adem structure. If $[\alpha], [\beta] \in H(A;\mathbb{F}_p)$ then
+	\begin{equation*}
+	P_s\big([\alpha] [\beta]\big) = \sum_{i+j=s} P_i\big( [\alpha] \big) P_j\big( [\beta] \big),
+	\end{equation*}
+	and
+	\begin{itemize}
+		\item If $p = 2$ and $a > 2b$
+		\begin{equation*}
+		P_{a}P_{b} = \sum_i {2i-a \choose a-b-i-1} P_{a+b-i}P_i,
+		\end{equation*}
+		\item If $p > 2$ and $a > pb$
+		\begin{equation*}
+		P_{a}P_{b} = \sum_i (-1)^{a+i}{pi-a \choose a-(p-1)b-i-1} P_{a+b-i}P_i.
+		\end{equation*}
+	\end{itemize}		
+\end{lemma}
+
+\begin{proof}
+	These are proven as part of Corollary 2.7 and Theorem 4.7 in \cite{may70generalapproach}.
+\end{proof}
+
+For the even prime, proofs at the chain level of these formulae have been given in \cite{medina2020cartan,brumfiel2020cochain}. For a different operadic approach to Steenrod operations at the even prime please consult \cite{chataur2005adem-cartan}.
+
+For applications related to the cohomology of spaces, it is convenient to introduce the notation $P^s = P_{-s}$ and $\beta P^s = \beta P_{-s}$, which we use in subsections 6.4 and 6.5.
+
