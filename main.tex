@@ -1,5 +1,4 @@
 \documentclass[A4]{amsart}
-
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{tikz-cd}
 \usepackage{graphics}
@@ -18,6 +17,7 @@ pdfpagelabels]{hyperref}
 }
 \usepackage[alphabetic]{amsrefs}
 
+% enviorenments
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
@@ -25,22 +25,30 @@ pdfpagelabels]{hyperref}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 
+% sets
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+
+% funtors and operators
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\End}{\mathrm{End}}
 \DeclareMathOperator*{\colim}{colim}
 
-\include{figures}
+% other
+\renewcommand{\th}{^{\mathrm{th}}}
 
+% paper shape
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-1.6in}
 \setlength{\textheight}{\paperheight}
 \addtolength{\textheight}{-1.8in}
 \calclayout
 
+\include{figures}
+
 \begin{document}
 	
-\title{Chain level Steenrod operations}
+\title{Cochain level May-Steenrod operations}
 
 \author[R. Kaufmann]{Ralph M.\ Kaufmann}
 \address{Department of Mathematics, Department of Physics and Astronomy, Purdue University}

@@ -1,10 +1,10 @@
 
-\section{Steenrod-Adem structures}
+\section{May-Steenrod structures}
 
 We now introduce an operadic formulation of a structure giving rise to Steenrod operations at every prime. It is based on \cites{steenrod47products, steenrod53symmetric, steenrod53cyclic, may70generalapproach}, and takes a viewpoint that emphasizes the integral structure needed to define them and prove their relations at every prime. For a more geometric treatment we refer the reader to \cites{may72geometry, may76homology, lawson2020n}.
 
-\begin{definition} \label{def: Steenrod-Adem structure}
-	A \textit{Steenrod-Adem structure} on an operad $\mathcal O$ is a 
+\begin{definition} \label{def: May-Steenrod structure}
+	A \textit{May-Steenrod structure} on an operad $\mathcal O$ is a 
 	morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$-operad
 	\begin{equation*}
 	\begin{tikzcd}[column sep = normal, row sep = small]
@@ -16,20 +16,33 @@ We now introduce an operadic formulation of a structure giving rise to Steenrod 
 \end{definition}
 
 \begin{remark} \label{rmk: Deligne conjecture}
-	In \cite{GerstenhaberVoronov} an operad morphism $\mathcal{A}ssoc \to \mathcal O$ is referred to as a \textit{multiplication} on $\mathcal O$. In this language, a choice of factorization for a Steenrod-Adem structure defines in particular a \textit{commutative multiplication}.
+	In \cite{GerstenhaberVoronov} an operad morphism $\mathcal{A}ssoc \to \mathcal O$ is referred to as a \textit{multiplication} on $\mathcal O$. In this language, a choice of factorization for a May-Steenrod structure on $\mathcal O$ defines in particular a \textit{commutative multiplication} on~$\mathcal O$.
 \end{remark}
 
-\begin{definition}
-	Let $A$ be a chain complex. A Steenrod-Adem structure on $\mathrm{End}_A$ is referred to as one on $A$. Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod} $(r, i)$-\textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
+\begin{definition} \label{def: Steenrod products}
+	Let $A$ be a chain complex.
+	A May-Steenrod structure on $\mathrm{End}_A$ is referred to as one on $A$.
+	Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod} $(r, i)$-\textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
 \end{definition}
 
-\begin{remark}
-	Restricting a Steenrod-Adem structure on a chain complex $A$ to a given arity $r$ corresponds to specifying a map $\theta \colon \mathcal W(r) \otimes A^{\otimes r} \to A$. This pair $(A, \theta)$ is an object in May's category $\mathfrak{C}(\mathrm C_r, \infty, \Z)$ introduced in \cite{may70generalapproach} Definition 2.1. Furthermore, the restriction to arity $r^2$ enhances this pair to an \textit{Adem object} as described in Definition 4.1 loc. cit.
-\end{remark}
+Let $A$ be equipped with a May-Steenrod structure
+%$\mathcal W \to \mathcal R \to \End_A$.
+\begin{equation*}
+\begin{tikzcd}[column sep = normal, row sep = small]
+& \mathcal R \arrow[dr, "\phi", out=0] & \\
+\mathcal W \arrow[ur, "\iota", in=180] \arrow[rr, "\psi"] & & \End_A.
+\end{tikzcd}
+\end{equation*}
+We can relate this structure to the language of \cite{may70generalapproach} as follows.
+The morphism $\phi$ provides $A$ with the structure of a homotopy associative (and commutative) dg algebra defined by the image in $\Hom(A^{\otimes 2}, A)$ of a representative in $\mathcal R(2)$ of a generator of its $0\th$-homology.
+Restricting $\psi$ to arity $r$ defines a map $\theta \colon W(r) \otimes A^{\otimes r} \to A$ and the pair $(A, \theta)$ into an object in May's category $\mathfrak{C}(\mathrm C_r, \infty, \Z)$ as presented in Definitions 2.1 op. cit.
+Explicitly, this is the claim that $\psi(e_0) \in \End_A(r)$ is $\mathrm C_r$-homotopic to the interated product $A^{\otimes r} \to A$.
+A claim that follows from the iterated product being a representative of a generator of the $0\th$-homology of $\mathrm R(r)$ and $\iota$ being a quasi-isomorphism of $\mathrm C$-modules.
+Furthermore, for $r$ equal to a prime $p$, tensoring the integers with $\F_p$ makes the pair $(A, \theta)$ an object in May's category $\mathfrak{C}(p, \infty)$.
+For elements in this category Definition 2.2 op. cit., reviewed below, defines operations on the mod-$p$ homology of $A$.
+In particular, if $A$ is given by the cochains of a space these products agree with Steenrod's original definitions, and for $A$ being the chains on an infinite loop spaces, with those defined by Araki-Kudo and Dyer-Lashof.
 
-A Steenrod-Adem structure on a chain complex $A$ allows us to define operations on its $\mathbb{F}_p$-homology for every prime $p$. These operations are structurally different if $p$ is even or odd. Using the previous Remark, the definitions below recover Steenrod's original definition for the cohomology of spaces and that of Araki-Kudo-Dyer-Lashof operations for the homology of infinite loop spaces.
-
-For the rest of this section $A$ is a chain complex equipped with a Steenrod-Adem structure.
+For the rest of this section $A$ is a chain complex equipped with a May-Steenrod structure.
 
 \begin{definition}
 	For any prime $p$, the $\mathbb{F}_p$-linear map
@@ -42,7 +55,7 @@ For the rest of this section $A$ is a chain complex equipped with a Steenrod-Ade
 We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q + i$.
 
 \begin{definition}
-	For any integer $s$, the \textit{Steenrod operation}
+	For any integer $s$, the \textit{May-Steenrod operation}
 	\begin{equation*}
 	P_s : H_\bullet(A; \mathbb{F}_2) \to H_{\bullet + s}(A; \mathbb{F}_2)
 	\end{equation*}
@@ -52,7 +65,7 @@ We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q 
 Notice that the Steenrod squares are determined by the Steenrod $(2,i)$-products with $\mathbb{F}_2$-coefficients. These binary operations are known as cup-$i$ products. In a similar way, the operations $P$ and $\beta P$ defined below for odd primes are determined by the Steenrod $\big(p, k(p-1)-\varepsilon\big)$-products for $\varepsilon \in \{0,1\}$. We can explain the appearance of these specific Steenrod products as follows. The increase on the degree of a $q$-cycle after applying $D^p_{k(p-1)-\varepsilon}$ to it is $(p-1)(q+k) - \varepsilon$, which can be rewritten as $2t(p-1) - \varepsilon$ if $q$ is even an $(2t+1)(p-1) - \varepsilon$ if $q$ is odd. According to Lemma \ref{lem: Thom's theorem}, these are the only homologically non-trivial cases.
 
 \begin{definition} \label{def: Steenrod operations at odd prime}
-	For any integer $s$, the \textit{Steenrod operations}
+	For any integer $s$, the \textit{May-Steenrod operations}
 	\begin{equation*}
 	P_s : H_\bullet(A; \mathbb{F}_p) \to H_{\bullet + 2s(p-1)}(A; \mathbb{F}_p)
 	\end{equation*}
@@ -71,9 +84,13 @@ Notice that the Steenrod squares are determined by the Steenrod $(2,i)$-products
 	The use of the coefficient function $\nu(q)$ is motivated by the identity $D_{q(p-1)}^p(a) = \nu(q)a$ in the case of spaces (see Eq. 6.1. in \cite{steenrod53cyclic}). The notation $\beta P_s$ is motivated by the relationship of this operator and the Bockstein of the reduction $\mathbb Z \to \mathbb Z/p\mathbb Z$.
 \end{remark}
 
-Steenrod operations satisfy the Cartan and Adem relations. Below we state the subset of these relations that is most commonly used and refer to Sections 2 and 4 of \cite{may70generalapproach} for a complete list and proofs.
+
+BEING A CARTAN OBJECT IS LIKE MORE COMPLICATED AND NOT IMMEDIATE IT SEEMS
+
+Steenrod operations satisfy the Cartan and Adem relations.
+Below we state the subset of these relations that is most commonly used and refer to Sections 2 and 4 of \cite{may70generalapproach} for a complete list and proofs.
 \begin{lemma}
-	Let $A$ be equipped with a Steenrod-Adem structure. If $[\alpha], [\beta] \in H(A;\mathbb{F}_p)$ then
+	Let $A$ be equipped with a May-Steenrod structure. If $[\alpha], [\beta] \in H(A;\mathbb{F}_p)$ then
 	\begin{equation*}
 	P_s\big([\alpha] [\beta]\big) = \sum_{i+j=s} P_i\big( [\alpha] \big) P_j\big( [\beta] \big),
 	\end{equation*}
@@ -91,7 +108,10 @@ Steenrod operations satisfy the Cartan and Adem relations. Below we state the su
 \end{lemma}
 
 \begin{proof}
-	These are proven as part of Corollary 2.7 and Theorem 4.7 in \cite{may70generalapproach}.
+	As described after Definition~\ref{def: Steenrod products}, for any prime $p$ the pair $(A, \theta)$ is an object in May's category $\mathfrak{C}(p, \infty)$.
+	Furthermore, this pair is in May's language both a Cartan and an Adem object, meaning that 
+	
+	and the claim of this lemma is proven as part of Corollary 2.7 and Theorem 4.7 in \cite{may70generalapproach}.
 \end{proof}
 
 For the even prime, proofs at the chain level of these formulae have been given in \cite{medina2020cartan,brumfiel2020cochain}. For a different operadic approach to Steenrod operations at the even prime please consult \cite{chataur2005adem-cartan}.
