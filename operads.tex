@@ -1,5 +1,5 @@
 
-\section{$\Gamma$-modules, operads and PROPs} \label{s:operads}
+\section{$\Gamma$-modules, operads and props} \label{s:operads}
 
 In this section we set up a framework in which the structure responsible for Steenrod operations becomes most transparent. Given our applications, we consider $\mathbf{Ch}_R$ as the base category, remarking that all definitions in this section apply to general closed symmetric monoidal categories.
 
@@ -62,15 +62,15 @@ A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$
 	concentrated in non-negative degrees.
 \end{definition}
 
-\subsection{Operads and PROPs}
+\subsection{Operads and props}
 
-Operads an PROPs are respectively $\mathrm{S}$-modules and \mbox{$\mathrm{S}$-bimodules} enriched with further compositional structure. These structures are best understood by abstracting the compositional structure naturally present in the endomorphism $\mathrm{S}$-module $\End_A$, naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a PROP.
+Operads an props are respectively $\mathrm{S}$-modules and \mbox{$\mathrm{S}$-bimodules} enriched with further compositional structure. These structures are best understood by abstracting the compositional structure naturally present in the endomorphism $\mathrm{S}$-module $\End_A$, naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a prop.
 
 Succinctly, an operad $\mathcal O$ is an $\mathrm{S}$-module together with a collection of $R$-linear maps
 \begin{equation*}
 \mathcal O(r) \otimes \mathcal O(s) \to \mathcal O(r+s-1)
 \end{equation*}
-satisfying suitable associativity, equivariance and unitality conditions. A PROP $\mathcal P$ is an $\mathrm{S}$-bimodule together with two types of compositions; horizontal
+satisfying suitable associativity, equivariance and unitality conditions. A prop $\mathcal P$ is an $\mathrm{S}$-bimodule together with two types of compositions; horizontal
 \begin{equation*}
 \mathcal P(r_1, s_1) \otimes \mathcal P(r_2, s_2) \to \mathcal P(r_1 + r_2, s_1 + s_2)
 \end{equation*}
@@ -80,21 +80,21 @@ and vertical
 \end{equation*}
 satisfying their own versions of associativity, equivariance and unitality. For a complete presentation of these concepts we refer to Definition 11 and 54 of \cite{markl2008operads}.
 
-We have already mentioned that for any chain complex $A$, the $\mathrm{S}$-module $\End_A$ is naturally an operad and the $\mathrm{S}$-bimodule $\End_A^A$ is naturally a PROP. We add that considering $\End^A$ as an $\mathrm{S}$-module, its compositional structure also defines an operad structure on it.
+We have already mentioned that for any chain complex $A$, the $\mathrm{S}$-module $\End_A$ is naturally an operad and the $\mathrm{S}$-bimodule $\End_A^A$ is naturally a prop. We add that considering $\End^A$ as an $\mathrm{S}$-module, its compositional structure also defines an operad structure on it.
 
-We remark that the compositional structure of a PROP $\mathcal P$ restricts to operad structures on $U_1(\mathcal P)$ and $U_2(\mathcal P)$.
+We remark that the compositional structure of a prop $\mathcal P$ restricts to operad structures on $U_1(\mathcal P)$ and $U_2(\mathcal P)$.
 
 The type of operads that we are most interested in are $E_\infty$-operads which, as we will discuss in the next section, are used to describe commutativity up to coherent homotopies.
 
 \begin{definition} [\cite{may72geometry}, \cite{boardman1973homotopy}]
-	An operad is said to be $E_\infty$ if its underlying \mbox{$\mathrm{S}$-module} is $E_\infty$, and a PROP $\mathcal P$ is said to be $E_\infty$ if either $U_1(\mathcal P)$ or $U(\mathcal P)$ is an \mbox{$E_\infty$-operad}.
+	An operad is said to be $E_\infty$ if its underlying \mbox{$\mathrm{S}$-module} is $E_\infty$, and a prop $\mathcal P$ is said to be $E_\infty$ if either $U_1(\mathcal P)$ or $U(\mathcal P)$ is an \mbox{$E_\infty$-operad}.
 \end{definition}
 
 \subsection{Algebras, coalgebra and bialgebras}
 
-A morphisms of operads or of PROPs is simply a morphisms of their underlying $\mathrm{S}$-modules or $\mathrm{S}$-bimodules preserving the respective compositional structures.
+A morphisms of operads or of props is simply a morphisms of their underlying $\mathrm{S}$-modules or $\mathrm{S}$-bimodules preserving the respective compositional structures.
 
-Given a chain complex $A$, an operad $\mathcal O$ and a PROP $\mathcal P$. An $\mathcal O$-\textit{algebra} (resp. $\mathcal O$-\textit{coalgebra}) structure on $A$ is an operad morphism $\mathcal O \to \End_A$ (resp. $\mathcal O \to \End^A$), and a $\mathcal P$-\textit{bialgebra} structure on $A$ is a PROP morphism $\mathcal P \to \End_A^A$.
+Given a chain complex $A$, an operad $\mathcal O$ and a prop $\mathcal P$. An $\mathcal O$-\textit{algebra} (resp. $\mathcal O$-\textit{coalgebra}) structure on $A$ is an operad morphism $\mathcal O \to \End_A$ (resp. $\mathcal O \to \End^A$), and a $\mathcal P$-\textit{bialgebra} structure on $A$ is a prop morphism $\mathcal P \to \End_A^A$.
 
 We remark that the linear duality functor naturally transforms an $\mathcal O$-coalgebra structure on a chain complex into an $\mathcal O$-algebra structure on its dual.
 
