@@ -1,7 +1,8 @@
 
 \section{Effective constructions} \label{s:effective}	
 
-In this section we construct explicit May-Steenrod structures on three well know combinatorial $E_\infty$-operads: the Barratt-Eccles operad $\mathcal E$ \cite{berger04combinatorial}, the surjection operad $\mathcal X$ \cite{mcclure03cochain}, and the operad $U(\mathcal M)$ associated to the finitely presented $E_\infty$-prop $\mathcal M$ \cite{medina2020prop1}. We also define natural and effective May-Steenrod structure on the normalized cochains of any simplicial or cubical set, by describing a $U(\mathcal M)$-algebra structures on it.
+In this section we construct explicit May-Steenrod structures on three well know combinatorial $E_\infty$ operads: the Barratt-Eccles operad $\mathcal E$ \cite{berger04combinatorial}, the surjection operad $\mathcal X$ \cite{mcclure03cochain}, and the operad $U(\mathcal M)$ associated to the finitely presented $E_\infty$ prop $\mathcal M$ introduced in \cite{medina2020prop1}.
+We also define natural and effective May-Steenrod structure on the normalized cochains of any simplicial or cubical set using that these are algebras over the operad $U(\mathcal M)$.
 
 Figure~\ref{fig: bigsummary} presents a diagrammatical representation of the constructions in this section.
 
@@ -12,13 +13,14 @@ Figure~\ref{fig: bigsummary} presents a diagrammatical representation of the con
 	& \mathcal E \arrow[ur, "TR"] & & & & \\
 	\mathcal W \arrow[rrrr, "\psi^\triangle", bend right=10] \arrow[rrrrr, "\psi^\square", bend right=20] \arrow[ur, "\psi_{\mathcal E}"] \arrow[uurr, "\psi_{\mathcal X}"', bend right=35, pos=.6] \arrow[uuurrr, "\psi_{U(\mathcal M)}"', bend right=45, pos=0.6] & & & & \End_{N^\bullet(X)} & \End_{N^\bullet(X)}
 	\end{tikzcd}
-	\caption{Summary of effective constructions: May-Steenrod structures on the Barratt-Eccles $\mathcal E$, surjection $\mathcal X$, and $U(\mathcal M)$ operads, and natural May-Steenrod structures on the normalized chains of simplicial and cubical sets. We are abusing notation since the maps $TR$ and $SL$ required different sign conventions.}
+	\caption{Summary of effective constructions: May-Steenrod structures on the Barratt-Eccles $\mathcal E$, surjection $\mathcal X$, and $U(\mathcal M)$ operads, and natural May-Steenrod structures on the normalized chains of simplicial and cubical sets. We remark that the maps $TR$ and $SL$ required different sign conventions.}
 	\label{fig: bigsummary}
 \end{figure}
 
 \subsection{Barratt-Eccles operad} In this subsection we effectively describe a May-Steenrod structure on the Barratt-Eccles operad.
 
-We begin by reviewing the $\mathrm{S}$-module structure underlying the Barratt-Eccles operad and, since will not use it in this work, refer to \cite{berger04combinatorial} for a description of if composition structure. For a non-negative integer $r$ define the simplicial set $E(\mathrm S_r)$ by 
+We begin by reviewing the $\mathrm{S}$-module structure underlying the Barratt-Eccles operad and, since will not use it in this work, refer to \cite{berger04combinatorial} for a description of if composition structure.
+For a non-negative integer $r$ define the simplicial set $E(\mathrm S_r)$ by 
 \begin{equation} \label{eq: milnor model of symmetric}
 \begin{split}
 E(\mathrm S_r)_n &= \{ (\sigma_0, \dots, \sigma_n)\ |\ \sigma_i \in \mathrm{S}_r\}, \\
@@ -33,7 +35,7 @@ with a left $\mathrm S_r$-action given by
 The chain complex resulting from applying the functor of normalized integral chains to it is denoted $\mathcal E(r)$, which corresponds to the arity $r$ part of the Barratt-Eccles operad.
 
 \begin{definition} \label{def: Steenrod-Adem on Barratt-Eccles}
-	For every $r \geq 0$, let $\psi_{\mathcal E}(r) : \mathcal W(r) \to \mathcal E(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined on basis elements by 
+	For every $r \geq 0$, let $\psi_{\mathcal E}(r) \colon \mathcal W(r) \to \mathcal E(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined on basis elements by 
 	\begin{equation*}
 	\psi_{\mathcal E}(r)(e_{n}) = \begin{cases}
 	\displaystyle{\sum_{r_1, \dots, r_m}} \big(\rho^0, \rho^{r_1}, \rho^{r_1+1}, \rho^{r_2}, \dots, \rho^{r_{m}}, \rho^{r_{m}+1} \big) & n = 2m, \\
@@ -52,7 +54,57 @@ The chain complex resulting from applying the functor of normalized integral cha
 \end{theorem}
 
 \begin{proof}
-	This theorem follows from a computation which we defer to the appendix.
+	Since $\mathcal X$ is an $E_\infty$ operad, we simply need to prove that the $\Z[\mathrm{C}_r]$-linear map
+	\begin{equation*}
+	\psi_{\mathcal E}(r) \colon \mathcal W(r) \to \mathcal E(r)
+	\end{equation*}
+	is a chain map for every $r \geq 0$.
+	We simplify notation and write $\psi$ instead of $\psi_{\mathcal E}(r)$. To show $\psi$ is a chain map we proceed by induction.
+	Notice that
+	\begin{equation*}
+	\psi(\partial e_0) = 0 = \partial \psi(e_0)
+	\end{equation*}
+	and assume $\psi(\partial e_{k-1}) = \partial \psi(e_{k-1})$. If $k = 2n$ we have
+	\begin{align*}
+	\partial \psi(e_{2n}) & = 
+	\partial \sum_{r_1, \dots, r_n} 
+	\big(\rho^0, \rho^{r_1}, \rho^{r_1+1}, \dots, \rho^{r_n}, \rho^{r_n+1} \big)  \\ & =
+	\partial \sum_{r_2, \dots, r_n} \sum_{r_1 = 0}^{p-1}
+	\big(\rho^0, \rho^{r_1} \, (\rho^0, \rho^{1}, \dots, \rho^{r_n-r_1}, \rho^{r_n - r_1 +1}) \big) \\ & =
+	\partial \sum_{r_2, \dots, r_n}
+	\big(\rho^0, N\, (\rho^{0}, \rho^{1}, \dots, \rho^{r_n}, \rho^{r_n + 1}) \big) \\ & =
+	\sum_{r_2, \dots, r_n}
+	N\, \big( \rho^{0}, \rho^{1}, \dots, \rho^{r_n}, \rho^{r_n + 1} \big) \\ & -
+	\sum_{r_2, \dots, r_n}
+	\big(\rho^0, \partial \, N \, (\rho^{0}, \rho^{1}, \dots, \rho^{r_n}, \rho^{r_n+1}) \big) \\ & =
+	N \psi(e_{2n-1}) - (\rho^0, \partial N \psi (e_{2n-1})) \\ & =
+	\psi(N e_{2n-1}) - (\rho^0, \psi (\partial N e_{2n-1})) \\ & =
+	\psi(\partial e_{2n}) - (\rho^0, \psi (\partial^2 e_{2n})) \\ & =
+	\psi(\partial e_{2n}).
+	\end{align*}
+	If $k = 2n+1$ we have
+	\begin{align*}
+	\partial \psi(e_{2n+1}) & = 
+	\partial \sum_{r_1, \dots, r_n} 
+	\big(\rho^0, \rho^1, \rho^{r_1}, \rho^{r_1+1}, \dots, \rho^{r_n}, \rho^{r_n+1} \big)  \\ & =
+	\partial \sum_{r_1, \dots, r_n}
+	\big(\rho^0, \rho^{1} \, (\rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n}) \big) \\ & =
+	\partial \sum_{r_1, \dots, r_n}
+	\big(\rho^0, T\, (\rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n}) \big) \\ & =
+	\sum_{r_1, \dots, r_n}
+	T \, \big( \rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n} \big) \\ & -
+	\sum_{r_1, \dots, r_n}
+	\big(\rho^0, \partial \, T \, (\rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n}) \big) \\ & =
+	T \psi(e_{2n}) - (\rho^0, \partial T \psi (e_{2n})) \\ & =
+	\psi(T e_{2n}) - (\rho^0, \psi (\partial T e_{2n})) \\ & =
+	\psi(\partial e_{2n+1}) - (\rho^0, \psi (\partial^2 e_{2n+1})) \\ & =
+	\psi(\partial e_{2n+1})
+	\end{align*}
+	where for the third equality we used that for any $r_1, \dots, r_n$
+	\begin{equation*}
+	(\rho^0, \rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n}) = 0.
+	\end{equation*}
+	This map is a quasi-isomorphism since both complexes have the homology of a point and $\psi(e_0)$ represents a generator of the homology.
 \end{proof}
 
 \begin{example}
@@ -87,43 +139,58 @@ The chain complex resulting from applying the functor of normalized integral cha
 \end{table}
 
 \begin{remark}
-	The natural construction \eqref{eq: milnor model of symmetric} is defined for any group, in particular, for finite cyclic groups, and the inclusion $\iota : \mathrm C_r \to \mathrm S_r$ induces a simplicial map $E(\iota) \colon E(\mathrm C_r) \to E(\mathrm S_r)$ which extends to a quasi-isomorphism of $\mathrm C$-modules
+	The natural construction \eqref{eq: milnor model of symmetric} is defined for any group, in particular, for finite cyclic groups, and the inclusion $\iota \colon \mathrm C_r \to \mathrm S_r$ induces both; a simplicial inclusion $E(\iota) \colon E(\mathrm C_r) \to E(\mathrm S_r)$ and one of $\mathrm C$-modules
 	\begin{equation*}
-	N_\bullet E(\iota) : N_\bullet E(\mathrm C) \to N_\bullet E(\mathrm S) = \mathcal E,
+	N_\bullet E(\iota) \colon N_\bullet E(\mathrm C) \to N_\bullet E(\mathrm S) = \mathcal E.
 	\end{equation*}
-	factoring
+	We remark that the image of our map $\psi_{\mathcal E}$ lies in the subcomplex $N_\bullet E(\mathrm C)$, so the map $\psi_{\mathcal E}$ factors as
 	\begin{equation*}
-	\psi_{\mathcal E} :
+	\psi_{\mathcal E} \colon
 	\begin{tikzcd}
-	\mathcal W \arrow[r, "\phi_{\mathrm C}"] &[-3pt] N_\bullet E(\mathrm C) \arrow[r, "N_\bullet E(\iota)"] &[5pt] \mathcal E.
+	\mathcal W \arrow[r] &[-3pt] N_\bullet E(\mathrm C) \arrow[r, "N_\bullet E(\iota)"] &[5pt] \mathcal E.
 	\end{tikzcd}
 	\end{equation*}
 \end{remark}
 
 \subsection{Surjection operad}
 
-In this subsection we introduce a May-Steenrod structures on the surjection operad. There are two widely used sign conventions for this operad respectively due to McClure-Smith \cite{mcclure03cochain} and Berger-Fresse \cite{berger04combinatorial}. Using the Berger-Fresse convention, we can define a May-Steenrod structure on the surjection operad by composing the map $\psi_{\mathcal E}$ with the \textit{table reduction} quasi-isomorphism $\mathcal E \to \mathcal X$ introduced in Section 1.3 of \cite{berger04combinatorial}. We define an May-Steenrod structure on the surjection operad in a convention independent way which recovers the table reduction May-Steenrod structure in the Berger-Fresse case.
+In this subsection we introduce a May-Steenrod structures on the surjection operad.
+There are two widely used sign conventions for this operad respectively due to McClure-Smith \cite{mcclure03cochain} and Berger-Fresse \cite{berger04combinatorial}.
+Using the Berger-Fresse convention, we can define a May-Steenrod structure on the surjection operad by composing the map $\psi_{\mathcal E}$ with the \textit{table reduction} quasi-isomorphism $\mathcal E \to \mathcal X$ introduced in Section 1.3 of \cite{berger04combinatorial}.
+We define an May-Steenrod structure on the surjection operad in a convention independent way which recovers the table reduction May-Steenrod structure in the Berger-Fresse case.
 
-Let us start by recalling the definition of the surjection operad. For a non-negative integer $r$ let $\mathcal X(r)_n$ be the free abelian group generated by all functions from $\{1, \dots, n+r\}$ to $\{1, \dots, r\}$ modulo the subgroup generated by degenerate functions, i.e., those which are either non-surjective or have a pair of equal consecutive values. We only describe the McClure-Smith convention since we refer to it in subsequent sections. The boundary map and symmetric action in this case is defined using the Koszul convention regarding a surjection $s : \{1, \dots, n+r\} \to \{1, \dots, r\} $ as the top dimensional generator in the chain complex
+Let us start by recalling the definition of the surjection operad.
+For a non-negative integer $r$ let $\mathcal X(r)_n$ be the free abelian group generated by all functions from $\{1, \dots, n+r\}$ to $\{1, \dots, r\}$ modulo the subgroup generated by degenerate functions, i.e., those which are either non-surjective or have a pair of equal consecutive values.
+We only describe the McClure-Smith convention since we refer to it in subsequent sections.
+The boundary map and symmetric action in this case is defined using the Koszul convention regarding a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\} $ as the top dimensional generator in the chain complex
 \begin{equation} \label{eq: surjection boundary}
 \bigotimes_{i = 1}^r N_\bullet \big( \triangle^{s^{-1}(i)}; \Z \big).
 \end{equation}
-Explicitly, if we think of $s$ as a sequence of integers $\big( s(1), \dots, s(n+r) \big)$ the boundary of $s$ is the sum of sequences obtained by orderly removing one at the time the occurrences of $1$ with alternating signs, then those of $2$ with starting sign equal to that of the last removal of $1$, and so on. Since we do not use the composition structure we refer to \cite{mcclure03cochain} for it.
+Explicitly, if we think of $s$ as a sequence of integers $\big( s(1), \dots, s(n+r) \big)$ the boundary of $s$ is the sum of sequences obtained by orderly removing one at the time the occurrences of $1$ with alternating signs, then those of $2$ with starting sign equal to that of the last removal of $1$, and so on.
+Since we do not use the composition structure we refer to \cite{mcclure03cochain} for it.
 
-Let us recall the chain contraction of $\mathcal X(r)$ onto $\mathcal X(r-1)$ used by McClure-Smith to prove $\mathcal X$ is an $E_\infty$-operad and whose introduction is credited to Benson \cite{benson1998rep}. Let the maps $i,\ p$ and $s$ be defined on basis elements, represented by sequences, as follows: $i : \mathcal X(r-1) \to \mathcal X(r)$ places a $1$ at the beginning of the sequence and increases each of the original entries by $1$, $p : \mathcal X(r) \to \mathcal X(r-1)$ takes the sequence to $0$ unless it contains a single occurence of $1$, in which case $p$ removes the $1$ and decreases each of the remaining entries by $1$, and finally, $s : \mathcal X(r) \to \mathcal X(r)$ places a 1 at the beginning of the sequence; if the sequence already begins
-with a 1, then the new sequence is degenerate so $s$ takes it to $0$. These maps satisfy
+Let us recall the chain contraction of $\mathcal X(r)$ onto $\mathcal X(r-1)$ used by McClure-Smith to prove $\mathcal X$ is an $E_\infty$ operad and whose introduction is credited to Benson \cite{benson1998rep}.
+Let the maps $i,\ p$ and $s$ be defined on basis elements, represented by sequences, as follows: $i \colon \mathcal X(r-1) \to \mathcal X(r)$ places a $1$ at the beginning of the sequence and increases each of the original entries by $1$, $p \colon \mathcal X(r) \to \mathcal X(r-1)$ takes the sequence to $0$ unless it contains a single occurrence of $1$, in which case $p$ removes the $1$ and decreases each of the remaining entries by $1$, and finally, $s \colon \mathcal X(r) \to \mathcal X(r)$ places a 1 at the beginning of the sequence; if the sequence already begins
+with a 1, then the new sequence is degenerate so $s$ takes it to $0$.
+These maps satisfy
 \begin{equation*}
-p  i = \mathrm{id}
+p i = \mathrm{id}
 \qquad \text{ and } \qquad
 \mathrm{id} - i  p = \partial s + s \partial.
 \end{equation*}
-These maps define a contraction of $\mathcal X(r)$ onto $\mathcal X(1) \cong \Z$ with homotopy $h = s + i\, s\, p + \cdots + i^{r-1} s\, p^{r-1}$, satisfying
+The compositions $i^{r-1}$ and $s^{r-1}$ define a contraction of $\mathcal X(r)$ onto $\mathcal X(1) \cong \Z$ with homotopy
 \begin{equation*}
+h = s + i\, s\, p + \cdots + i^{r-1} s\, p^{r-1},
+\end{equation*}
+i.e., they satisfy
+\begin{equation*}
+p^{r-1} i^{r-1} = \mathrm{id}
+\qquad \text{ and } \qquad
 \partial h + h \partial = \mathrm{id} - i^{r-1}\,p^{r-1}.
 \end{equation*}
 
 \begin{definition} \label{def: Steenrod-Adem on surjection}
-	For every $r \geq 0$, let $\psi_{\mathcal X}(r) : \mathcal W(r) \to \mathcal X(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined recursively on basis elements by
+	For every $r \geq 0$, let $\psi_{\mathcal X}(r) \colon \mathcal W(r) \to \mathcal X(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined recursively on basis elements by
 	\begin{align*}
 	\psi_{\mathcal X}(r)(e_0) & = (1, \dots, r), \\
 	\psi_{\mathcal X}(r)(e_{2m+1}) & = h\,T\,\psi_{\mathcal X}(r)(e_{2m}), \\
@@ -141,7 +208,32 @@ These maps define a contraction of $\mathcal X(r)$ onto $\mathcal X(1) \cong \Z$
 \end{theorem}
 
 \begin{proof}
-	This theorem follows from a computation which we defer to the appendix.
+	Since $\mathcal X$ is an $E_\infty$ operad, we simply need to prove that the $\Z[\mathrm{C}_r]$-linear map
+	\begin{equation*}
+	\psi_{\mathcal X}(r) \colon \mathcal W(r) \to \mathcal X(r)
+	\end{equation*}
+	introduced in Definition \ref{def: Steenrod-Adem on surjection} is a chain map for every $r \geq 0$. We simplify notation and write $\psi$ instead of $\psi_{\mathcal X}(r)$. To show $\psi$ is a chain map we proceed by induction. Notice that
+	\begin{equation*}
+	\psi(\partial e_0) = 0 = \partial \psi(e_0)
+	\end{equation*}
+	and assume $\psi(\partial e_{n-1}) = \partial \psi(e_{n-1})$. For $n = 2m+1$ we have
+	\begin{align*}
+	\partial \psi(e_{2m+1}) 
+	& =
+	\partial\, h\, T\, \psi(e_{2m}) \big) \\
+	& =
+	T\, \psi(e_{2m}) - i^{r-1} p^{r-1}\, \psi(e_{2m}) -
+	h\, \partial\, T\, \psi(e_{2m}) \big) \\
+	& =
+	T\, \psi(e_{2m}) - 
+	h\, T\, \psi(\partial\, e_{2m}) \big) \\
+	& =
+	T\, \psi(e_{2m}) - 
+	h\, \psi(T\,N\, e_{2m-1}) \big) \\
+	& = 
+	T \psi(e_{2m}).
+	\end{align*}
+	For $n = 2m$ the proof is analogous. The chain map $\psi$ is a quasi-isomorphism since both complexes have the homology of a point and $\psi(e_0) = (1, \dots, r)$ is a generator of the homology.
 \end{proof}
 
 For the rest of the paper we use the McClure-Smith sign convention on $\mathcal X$.
@@ -176,9 +268,10 @@ For the rest of the paper we use the McClure-Smith sign convention on $\mathcal 
 	\label{fig: surjection Steenrod products}
 \end{table}
 
-\subsection{The finitely presented $E_\infty$-prop $\mathcal M$}
+\subsection{The $E_\infty$ prop $\mathcal M$}
 
-We start by reviewing the finitely presented $E_\infty$-prop introduced in \cite{medina2020prop1}. Let $\mathcal M$ be the prop generated by 
+We start by reviewing the finitely presented $E_\infty$ prop introduced in \cite{medina2020prop1}.
+Let $\mathcal M$ be the prop generated by 
 \begin{equation*}
 \counit \in \mathcal M(1,0)_0, \hspace*{.6cm} \coproduct \in \mathcal M(1,2)_0, \hspace*{.6cm} \product \in \mathcal M(2,1)_1,
 \end{equation*}
@@ -191,13 +284,12 @@ and restricted by the relations
 \productcounit, \hspace*{.6cm} \leftcounitality \, , \hspace*{.6cm} \rightcounitality \, .
 \end{equation*}
 
-Theorem 3.3 in \cite{medina2020prop1} established that $\mathcal M$ is an $E_\infty$-prop in the terminology of Bordmann-Vogt \cite{boardman1973homotopy}. More precisely, it shows that the associated operad $U_2(\mathcal M) = \big\{ \mathcal M(1, r) \big\}_{r \geq 0}$ is an $E_\infty$-operad. For the remainder of this article we write $U(\mathcal M)$ instead of $U_2(\mathcal M)$.
+Theorem 3.3 in \cite{medina2020prop1} established that $\mathcal M$ is an $E_\infty$ prop as introduced in Definition~\ref{def: e-infinity operad and prop}.
+More precisely, it shows that the associated operad $U_2(\mathcal M) = \big\{ \mathcal M(1, r) \big\}_{r \geq 0}$ is an $E_\infty$ operad.
+For the remainder of this article we write $U(\mathcal M)$ instead of $U_2(\mathcal M)$.
 
-We will define a May-Steenrod structure $\psi_{U(\mathcal M)} \colon \mathcal W \to U(\mathcal M)$ by composing the May-Steenrod structure $\psi_{\mathcal X} : \mathcal W \to \mathcal X$ with a morphism of $\mathrm{C}$-modules ($\mathrm{S}$-modules in fact)
-\begin{equation*}
-SL \colon \mathcal X \to U(\mathcal M)
-\end{equation*}
-that we now define. Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\}$ let $SL(s)$ be the element
+We will define a May-Steenrod structure $\psi_{U(\mathcal M)} \colon \mathcal W \to U(\mathcal M)$ by composing the May-Steenrod structure $\psi_{\mathcal X} \colon \mathcal W \to \mathcal X$ with a morphism $SL \colon \mathcal X \to U(\mathcal M)$ of $\mathrm{C}$-modules ($\mathrm{S}$-modules in fact) that we now define.
+Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\}$ let $SL(s)$ be the element represented by the connected $(1,r)$-graph
 \begin{center}
 	\begin{tikzpicture}[scale=.85]
 	\draw (0,0)--(0,-.6) node[below]{$\scriptstyle 1$};
@@ -229,7 +321,10 @@ that we now define. Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dot
 \end{center}
 that has no internal vertices and such that the $n+r$ strands at the top are orderly connected to the strands at the bottom following the values of $s$.
 
-It can be directly verified using the presentation of $\mathcal M$ that the boundary of $SL(s)$ is obtained by removing strands one at the time in the order they are attached at the bottom. This is precisely the image of $SL(\partial s)$ according to \eqref{eq: surjection boundary}. Furthermore, relabeling the bottom edges agrees with the permutation of preimages of the associated surjection. Since both operads have the homology of a point and $(1, \dots, r)$ is sent to a representative of a homology generator we have proven the following
+It can be directly verified using the presentation of $\mathcal M$ that the boundary of $SL(s)$ is obtained by removing strands one at the time in the order they are attached at the bottom.
+This is precisely the image of $SL(\partial s)$ according to \eqref{eq: surjection boundary}.
+Furthermore, relabeling the bottom edges agrees with the permutation of preimages of the associated surjection.
+Since both operads have the homology of a point and $(1, \dots, r)$ is sent to a representative of a homology generator we have proven the following
 
 \begin{theorem} \label{thm: Steenrod-Adem on U(M)}
 	The composition $\psi_{U(\mathcal M)}$
@@ -290,11 +385,16 @@ It can be directly verified using the presentation of $\mathcal M$ that the boun
 
 \subsection{Cochains of simplicial sets}
 
-In this subsection we introduce a natural May-Steenrod structure on the normalized cochains of any simplicial set $X$. Since a May-Steenrod structure was constructed in the previous section for $U(\mathcal M)$, we only need to describe a natural $U(\mathcal M)$-algebra structure on $N^\bullet(X)$. Using the linear duality functor, it suffices to construct a natural $U(\mathcal M)$-coalgebra structure on $N_\bullet(X)$ which, in turn, can be derived via a Kan extension argument from one on each $N_\bullet(\triangle^n)$. We obtain these coalgebra structures by restricting a full $\mathcal M$-bialgebra structure. An $\mathcal M$-bialgebra structure is specified by three linear maps, the images of the generators
+In this subsection we introduce a natural May-Steenrod structure on the normalized cochains of any simplicial set $X$.
+Since a May-Steenrod structure was constructed in the previous section for $U(\mathcal M)$, we only need to describe a natural $U(\mathcal M)$-algebra structure on $N^\bullet(X)$.
+Using the linear duality functor, it suffices to construct a natural $U(\mathcal M)$-coalgebra structure on $N_\bullet(X)$ which, in turn, can be derived via a Kan extension argument from one on each $N_\bullet(\triangle^n)$.
+We obtain these coalgebra structures by restricting a full $\mathcal M$-bialgebra structure.
+An $\mathcal M$-bialgebra structure is specified by three linear maps, the images of the generators
 \begin{equation*}
 \counit, \quad \coproduct, \quad \product,
 \end{equation*}
-satisfying the relations in the presentation of $\mathcal M$. For $n \in \mathbb{N}$, define: \vspace*{5pt} \\
+satisfying the relations in the presentation of $\mathcal M$.
+For $n \in \mathbb{N}$, define: \vspace*{5pt} \\
 (1) The counit $\epsilon \in \Hom(N_\bullet(\triangle^n), \Z)$ by
 \begin{equation*}
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0. \end{cases}
@@ -310,21 +410,16 @@ satisfying the relations in the presentation of $\mathcal M$. For $n \in \mathbb
 \end{equation*}
 where $\pi$ is the permutation that orders the totally ordered set of vertices, and $(-1)^{|\pi|}$ its sign.
 
-\begin{theorem} \label{thm: simplicial chain bialgebra}
+\begin{proposition}[\cite{medina2020prop1}] \label{prop: simplicial chain bialgebra}
 	For every $n \in \mathbb{N}$, the assignment
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure  on $N_\bullet(\triangle^n)$.
-\end{theorem}
+	defines a natural $\mathcal M$-bialgebra structure  on $N_\bullet(\triangle^n)$, and, through a Kan extension argument, a natural $U(\mathcal M)$-algebra structure $\phi^\triangle \colon U(\mathcal M) \to \End_{N^\bullet (X)}$ on the cochains of any simplicial set $X$.
+\end{proposition}
 
-\begin{proof}
-	This statement is proven as Theorem 4.2 in \cite{medina2020prop1}.
-\end{proof}
-
-\begin{definition}
-	Let $X$ be a simplicial set. Denote by $\phi^\triangle : U(\mathcal M) \to \End_{N^\bullet (X)}$ the algebra structure obtained by dualizing the coalgebra structure induced by the restrictions of the natural $\mathcal M$-bialgebras of Theorem \ref{thm: simplicial chain bialgebra}.
-\end{definition}
+Composing the algebra structure $\phi^\triangle$ with the May-Steenrod structure on $U(\mathcal M)$ gives a natural May-Steenrod structure on $N^\bullet(X)$.
+We record this observation in the following.
 
 \begin{theorem}
 	The commutative diagram
@@ -338,11 +433,15 @@ where $\pi$ is the permutation that orders the totally ordered set of vertices, 
 \end{theorem}
 
 \begin{remark}
-	The $E_\infty$-structure we described in Theorem \ref{thm: simplicial chain bialgebra}, depending solely on three fundamental maps, recovers the coalgebra structures of McClure-Smith \cite{mcclure03cochain} and, up to signs, that of Berger-Fresse \cite{berger04combinatorial}.
+	The $E_\infty$ structure we described in Proposition~\ref{prop: simplicial chain bialgebra}, depending solely on three fundamental maps, generalizes the coalgebra structures of McClure-Smith \cite{mcclure03cochain} and Berger-Fresse \cite{berger04combinatorial}, please consult \cite{medina2020prop1} for more details.
 \end{remark}
 
+We will now give examples of how this May-Steenrod structure defines representatives of Steenrod operations for simplicial cochains.
+For applications related to the cohomology of spaces, it is convenient to introduce the notation $P^s = P_{-s}$ and $\beta P^s = \beta P_{-s}$ for Steenrod operations.
+
 \begin{example}
-	Let us consider the prime $2$. The value $P^1(x)\big([0,1,2,3,4]\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\triangle^4)$ is equal to the value of $x^{\otimes 2}$ acting on
+	Let us consider the prime $2$.
+	The value $P^1(x)\big([0,1,2,3,4]\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\triangle^4)$ is equal to the value of $x^{\otimes 2}$ acting on
 	\begin{align*}
 	[0, 1, 2, 3] \otimes [0, 1, 3, 4] \ +\  & 
 	[0, 2, 3, 4] \otimes [0, 1, 2, 4] \\ \ +\ 
@@ -373,7 +472,8 @@ where $\pi$ is the permutation that orders the totally ordered set of vertices, 
 \end{example}
 
 \begin{example}
-	Let us consider the prime $3$. The value $\beta P^1(x)\big([0,1,2,3,4,5,6,7,8]\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\triangle^8)$ is equal to the value of $x^{\otimes 3}$ acting on
+	Let us consider the prime $3$.
+	The value $\beta P^1(x)\big([0,1,2,3,4,5,6,7,8]\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\triangle^8)$ is equal to the value of $x^{\otimes 3}$ acting on
 	\begin{align*}
 	& \,-\, [0, 6, 7, 8] \otimes [0, 1, 2, 3] \otimes [3, 4, 5, 6] \,+\, [0, 1, 7, 8] \otimes [1, 2, 3, 4] \otimes [4, 5, 6, 7] \\ & \,-\, [0, 1, 2, 8] \otimes [2, 3, 4, 5] \otimes [5, 6, 7, 8].
 	\end{align*}
@@ -385,7 +485,10 @@ where $\pi$ is the permutation that orders the totally ordered set of vertices, 
 
 \subsection{Cochains of cubical sets}
 
-In this subsection we introduce a natural May-Steenrod structure on the normalized cochains of any cubical set. It follows the structure of the previous subsection closely. By the same considerations, the desired construction will follow from a natural $\mathcal M$-bialgebra structure on $N_\bullet(\square^n)$. These are determined by three linear maps satisfying the relations in the presentation of $\mathcal M$. For $n \in \mathbb{N}$, define: \vspace*{5pt} \\
+In this subsection we introduce, closely following the presentation of the previous subsection, a natural May-Steenrod structure on the normalized cochains of any cubical set.
+By the same considerations, the desired construction will follow from a natural $\mathcal M$-bialgebra structure on $N_\bullet(\square^n)$.
+These are determined by three linear maps satisfying the relations in the presentation of $\mathcal M$.
+For $n \in \mathbb{N}$, define: \vspace*{5pt} \\
 (1) The counit $\epsilon \in \Hom(N_\bullet(\square^n), \Z)$ by
 \begin{equation*}
 \epsilon \left( x_1 \otimes \cdots \otimes x_d \right) = \epsilon(x_1) \cdots \, \epsilon(x_n),
@@ -436,25 +539,16 @@ and the only non-zero values of $x_i \ast y_i$ are
 \ast([0] \otimes [1]) = [0, 1], \qquad  \ast([1] \otimes [0]) = -[0, 1].
 \end{equation*}
 
-\begin{theorem} \label{thm: cubical chain bialgebra}
+\begin{proposition}[\cite{medina2021cubical}] \label{prop: cubical chain bialgebra}
 	For every $n \in \mathbb{N}$, the assignment
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure on $N_\bullet(\square^n)$.
-\end{theorem}
+	defines a natural $\mathcal M$-bialgebra structure on $N_\bullet(\square^n)$, and, through a Kan extension argument, a natural $U(\mathcal M)$-algebra structure $\phi^\square \colon U(\mathcal M) \to \End_{N^\bullet (X)}$ on the cochains of any cubical set $X$.
+\end{proposition}
 
-\begin{proof}
-	We present a proof of this statement in the appendix.
-\end{proof}
-
-\begin{remark}
-	We saw that for simplicial sets a natural algebraic $E_\infty$-structure was determined by basic maps in the standard simplices. For cubical sets, one such structure is constructed by naturally extending three maps defined just on the interval. 
-\end{remark}
-
-\begin{definition}
-	Let $X$ be a cubical set. Denote by $\phi^\square : U(\mathcal M) \to \End_{N^\bullet (X)}$ the algebra structure obtained by dualizing the coalgebra structure induced by the restrictions of the natural $\mathcal M$-bialgebras of Theorem~\ref{thm: cubical chain bialgebra}.
-\end{definition}
+Composing the algebra structure $\phi^\square$ with the May-Steenrod structure on $U(\mathcal M)$ gives a natural May-Steenrod structure on $N^\bullet(X)$.
+We record this observation in the following.
 
 \begin{theorem}
 	The commutative diagram
@@ -467,8 +561,12 @@ and the only non-zero values of $x_i \ast y_i$ are
 	defines a natural May-Steenrod structure on $N^\bullet(X)$ for any cubical set $X$.
 \end{theorem}
 
+We will now give examples of how this May-Steenrod structure defines representatives of Steenrod operations for cubical cochains.
+Recall the notation $P^s = P_{-s}$ and $\beta P^s = \beta P_{-s}$ for Steenrod operations used when studying the cohomology of spaces.
+
 \begin{example}
-	Let us consider the prime $2$. The value $P^1(x)\big([01]^{4}\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\square^4)$ is equal to the value of $x^{\otimes 2}$ acting on
+	Let us consider the prime $2$.
+	The value $P^1(x)\big([01]^{4}\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\square^4)$ is equal to the value of $x^{\otimes 2}$ acting on
 	\begin{align*}&
 	[01]1[01][01] \otimes [01][01]0[01]\,+\,
 	[01][01][01]0 \otimes [01]0[01][01]\,+\, \\&
@@ -486,9 +584,9 @@ and the only non-zero values of $x_i \ast y_i$ are
 \end{example}
 
 \begin{example}
-	Let us consider the prime $3$. The value of $\beta P^0(x)\big([01]^2\big)$ for a homogeneous cocycle $x$ in $N^{-1}(\square^2)$ is equal to the value of $x^{\otimes 3}$ acting on
+	Let us consider the prime $3$.
+	The value of $\beta P^0(x)\big([01]^2\big)$ for a homogeneous cocycle $x$ in $N^{-1}(\square^2)$ is equal to the value of $x^{\otimes 3}$ acting on
 	\begin{align*}
 	\,-\, [01]1 \otimes [01]0 \otimes 1[01] \,-\, 0[01] \otimes [01]0 \otimes 1[01] + [01]1 \otimes 0[01] \otimes [01]1 + 0[01] \otimes 0[01] \otimes [01]1.
 	\end{align*}
 \end{example}
-

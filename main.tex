@@ -2,6 +2,7 @@
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{tikz-cd}
 \usepackage{graphics}
+% hyperref
 \usepackage[bookmarks=true, linktocpage=true,
 bookmarksnumbered=true, breaklinks=true,
 pdfstartview=FitH, hyperfigures=false,
@@ -15,11 +16,13 @@ pdfpagelabels]{hyperref}
 	linkcolor=blue,
 	urlcolor=blue
 }
+\usepackage[capitalize, noabbrev]{cleveref}
 \usepackage[alphabetic]{amsrefs}
 
 % enviorenments
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
@@ -55,16 +58,16 @@ pdfpagelabels]{hyperref}
 \email{rkaufman@purdue.edu}
 
 \author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
-\address{Laboratory for Topology and Neuroscience, École Polytechnique Fédérale de Lausanne, Switzerland}
-\address{Department of Mathematics, University of Notre Dame du Lac, Notre Dame, IN, USA}
+\address{Laboratory for Topology and Neuroscience, EPFL \and
+Department of Mathematics, University of Notre Dame}
 \email{amedinam@nd.edu}
-\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1}, and the hospitality of the Max Plank Institute for Mathematics.}
+\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1}, and the hospitality of the Max Plank Institute for Mathematics where part of this work developed.}
 
 \subjclass[2010]{55S05, 55U05, 55S10, 55S12; 55-04, 55U15, 55S15}
 \keywords{Steenrod operations, Dyer-Lashof operations, operads, simplicial cochains, cubical cochains}
 
 \begin{abstract}
-	Steenrod defined in 1947 the Steenrod squares on the mod 2 cohomology of spaces using explicit cochain formulae for the cup-$i$ products; a family of coherent homotopies derived from the broken symmetry of Alexander-Whitney's chain approximation to the diagonal. He later defined his homonymous operations for all primes using the homology of symmetric groups. This approach enhanced the conceptual understanding of the operations and allowed for many advances, but lacked the concreteness of their definition at the even prime. In recent years, thanks to the development of new applications of cohomology ---most notably in Applied Topology and Quantum Field Theory--- having definitions of Steenrod operations that can be effectively computed in specific examples has become a key issue. This article provides such definitions at all primes using the operadic viewpoint of May, defining multioperations that generalize the cup-$i$ products of Steenrod on the simplicial and cubical cochains of spaces.
+	Steenrod defined in 1947 the Steenrod squares on the mod 2 cohomology of spaces using explicit cochain formulae for the cup-$i$ products; a family of coherent homotopies derived from the broken symmetry of Alexander-Whitney's chain approximation to the diagonal. He later defined his homonymous operations for all primes using the homology of symmetric groups. This approach enhanced the conceptual understanding of the operations and allowed for many advances, but lacked the concreteness of their definition at the even prime. In recent years, thanks to the development of new applications of cohomology, having definitions of Steenrod operations that can be effectively computed in specific examples has become a key issue. This article provides such definitions at all primes using the operadic viewpoint of May, and defines multioperations that generalize the cup-$i$ products of Steenrod on the simplicial and cubical cochains of spaces.
 \end{abstract}
 
 \maketitle
@@ -77,12 +80,6 @@ pdfpagelabels]{hyperref}
 \input{steenrod}
 \input{effective}
 \input{outlook}
-\input{proofs}
-
-\newpage
-\appendix
-
-\bibliographystyle{alpha} 
-\bibliography{bib}
+\bibliography{bibliography}
 	
 \end{document}

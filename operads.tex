@@ -1,14 +1,18 @@
 
 \section{$\Gamma$-modules, operads and props} \label{s:operads}
 
-In this section we set up a framework in which the structure responsible for Steenrod operations becomes most transparent. Given our applications, we consider $\mathbf{Ch}_R$ as the base category, remarking that all definitions in this section apply to general closed symmetric monoidal categories.
+In this section we set up a framework in which the structure responsible for Steenrod operations becomes most transparent.
+Given our applications, we consider $\mathbf{Ch}_R$ as the base category, remarking that all definitions in this section apply to general closed symmetric monoidal categories.
 
 \subsection{$\Gamma$-modules}
-Recall that a group $\mathrm G$ can be thought of as a category with a single object and only invertible morphisms, and that a chain complex of left (resp. right) $R[\mathrm G]$-modules is the same as a covariant (resp. contravariant) functor from $\mathrm G$ to $\mathbf{Ch}_R$. Right actions are more commonly used in the literature of operads so we emphasize that perspective. Taking inverses allows for the switch between these two conventions. 
+Recall that a group $\mathrm G$ can be thought of as a category with a single object and only invertible morphisms, and that a chain complex of left (resp. right) $R[\mathrm G]$-modules is the same as a covariant (resp. contravariant) functor from $\mathrm G$ to $\mathbf{Ch}_R$.
+%Right actions are more commonly used in the literature of operads so we emphasize that perspective.
+Taking inverses allows for the switch between left and right conventions.
 
 A \textit{groupoid} is a small category where all morphisms are invertible.
 \begin{definition}
-	A \textit{$\Gamma$-module} is a contravariant functor to $\mathbf{Ch}_R$ from a groupoid $\Gamma$ with objects the natural numbers and morphisms satisfying $\Gamma(r,s) = \emptyset$ for $r \neq s$. We denote the category of $\Gamma$-modules and natural transformations by $\mathbf{Ch}_R^\Gamma$.
+	A \textit{$\Gamma$-module} is a covariant functor to $\mathbf{Ch}_R$ from a groupoid $\Gamma$ with objects the natural numbers and morphisms satisfying $\Gamma(r,s) = \emptyset$ for $r \neq s$.
+	We denote the category of $\Gamma$-modules and natural transformations by $\mathbf{Ch}_R^\Gamma$.
 \end{definition}
 
 We are mostly interested in two examples of $\Gamma$-modules, those associated to the groupoids $\mathrm{S}$ and $\mathrm{C}$ defined by
@@ -16,47 +20,53 @@ We are mostly interested in two examples of $\Gamma$-modules, those associated t
 \mathrm{S}(r, r) = \mathrm{S}_r, \qquad
 \mathrm{C}(r,r) = \mathrm{C}_r,
 \end{equation*}
-for every $r \in \mathbb{N}$. The inclusion $\mathrm{C}_r \to \mathrm{S}_r$ induces a forgetful functor
+for every $r \in \mathbb{N}$.
+The inclusion $\mathrm{C}_r \to \mathrm{S}_r$ induces a forgetful functor
 \begin{equation*}
 \begin{tikzcd} [column sep = small]
 \mathbf{Ch}_R^\mathrm{S}  \arrow[r] & \mathbf{Ch}_R^\mathrm{C}.
 \end{tikzcd}
 \end{equation*}
 
-Given an object $A$ in $\mathbf{Ch}_R$ there are two important $\Gamma$-modules associated to it; an $\mathrm{S}$-module known as \textit{endomorphism $\mathrm{S}$-module} $\End_A$, and an $\mathrm{S}^{op}$-module known as \textit{coendomorphism $\mathrm{S}$-module} $\End^A$. These are defined by
+Given an object $A$ in $\mathbf{Ch}_R$ there are two important $\Gamma$-modules associated to it; an $\mathrm{S}^{op}$-module known as \textit{endomorphism $\mathrm{S}^{op}$-module} $\End_A$, and an $\mathrm{S}$-module known as \textit{coendomorphism $\mathrm{S}$-module} $\End^A$.
+These are defined by
 \begin{align*}	
 \End_A(r) &= \Hom(A^{\otimes r},A), \\
 \End^A(r) &= \Hom(A,A^{\otimes r}),
 \end{align*}
-with respective right and left actions defined by permutation of tensor factors. 
+with respective right and left actions defined by permutation of tensor factors.
 
-Another groupoid of importance to us is $\mathrm{S} \times \mathrm{S}^{op}$. Contravariant functors from it to $\mathbf{Ch}_R$ are called \textit{$\mathrm{S}$-bimodules} and their functor category is denoted $\mathbf{Ch}_R^{\mathrm{S} \times \mathrm{S}^{op}}$. Notice that the inclusions
-define forgetful functors
+Another groupoid of importance to us is $\mathrm{S} \times \mathrm{S}^{op}$ with covariant functors from it to $\mathbf{Ch}_R$ referred to as \textit{$\mathrm{S}$-bimodules}.
+Notice that the inclusions $\mathrm{S} \to \mathrm{S} \times \mathrm{S}^{op}$ induced by $r \mapsto (r,1)$ and $r \mapsto (1,r)$ define forgetful functors
 \begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=tiny]
 & \mathbf{Ch}_R^{\mathrm{S} \times \mathrm{S}^{op}} \arrow[dl, "U_1"'] \arrow[dr, "U_2"] & \\
-\mathbf{Ch}_R^{\mathrm{S}} &  & \mathbf{Ch}_R^{\mathrm{S}^{op}},
+\mathbf{Ch}_R^{\mathrm{S}^{op}} &  & \mathbf{Ch}_R^{\mathrm{S}},
 \end{tikzcd}
 \end{equation*}
-and that for any object $A$ in $\mathbf{Ch}_R$, the canonical \textit{endomorphism bimodule}
+and that for any object $A$ in $\mathbf{Ch}_R$ the canonical \textit{endomorphism bimodule}
 \begin{equation*}
 \End_A^A(r, s) = \Hom(A^{\otimes r}, A^{\otimes s})
 \end{equation*}
-forgets to $\End_A$ and $\End^A$.
+forgets via $U_1$ and $U_2$ to $\End_A$ and $\End^A$ respectively.
 
-Using the groupoid automorphism sending every morphisms to its inverse we can identify $\Gamma$- and $\Gamma^{op}$- modules. In particular, the statement claiming that the linear duality functor induces a morphism of $\mathrm{S}$-modules
+Using the groupoid automorphism sending every morphisms to its inverse we can identify $\Gamma$- and $\Gamma^{op}$-modules, and prove that the linear duality functor induces a morphism of $\mathrm{S}$-modules
 \begin{equation*}
 \End^A \to \End_{\Hom(A, R)}
 \end{equation*}
-for every object $A$ in $\mathbf{Ch}_R$ is well defined and easily verified using this identification.
+for every object $A$ in $\mathbf{Ch}_R$.
+We will use this identification freely in what follows.
 
-A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$-modules such that $\phi(r)$ is a resolution in the category of chain complexes of $R[\Gamma_r]$-modules for each $r \in \mathbb{N}$. A $\Gamma$-module $\mathcal R$ is said to be $E_\infty$ if $\mathcal R(0) = R$ and there exists a resolution $\mathcal R \to \underline{R}$ where $\underline{R}$ is the object in $\mathbf{Ch}_R^\Gamma$ defined by $\underline{R}(r) = R$ and $\underline{R}(\gamma) = \mathrm{id}_R$ for every $r \in \mathbb{N}$ and $\gamma \in \Gamma_r$.
+A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$-modules such that $\phi(r)$ is a resolution in the category of chain complexes of $R[\Gamma_r]$-modules for each $r \in \mathbb{N}$.
+A $\Gamma$-module $\mathcal R$ is said to be $E_\infty$ if $\mathcal R(0) = R$ and there exists a resolution $\mathcal R \to \underline{R}$ where $\underline{R}$ is the object in $\mathbf{Ch}_R^\Gamma$ defined by $\underline{R}(r) = R$ and $\underline{R}(\gamma) = \mathrm{id}_R$ for every $r \in \mathbb{N}$ and $\gamma \in \Gamma_r$.
+
+We have the following evident generalization to the context of groupoids of the resolutions introduced in \eqref{eq: minimal resolution}.
 
 \begin{definition} \label{def: minimal cyclic resolution}
-	The \textit{minimal} $E_\infty$-$\mathrm{C}$-\textit{module} $\mathcal W$ is the functor in $\mathbf{Ch}_R^\mathrm{C}$ assigning to $r$ the chain complex
+	The \textit{minimal} $E_\infty$ $\mathrm{C}$-\textit{module} $\mathcal W$ is the functor in $\mathbf{Ch}_R^\mathrm{C}$ assigning to $r$ the chain complex
 	\begin{equation*}
 	\begin{tikzcd} [column sep = .5cm]
-	R[\mathrm{C}_r] & \arrow[l, "\,T"'] R[\mathrm{C}_r] & \arrow[l, "\,N"'] R[\mathrm{C}_r] & \arrow[l, "\,T"'] \cdots
+	\mathcal W(r) = R[\mathrm{C}_r]\{e_0\} & \arrow[l, "\,T"'] R[\mathrm{C}_r]\{e_1\} & \arrow[l, "\,N"'] R[\mathrm{C}_r]\{e_2\} & \arrow[l, "\,T"'] \cdots
 	\end{tikzcd}
 	\end{equation*}
 	concentrated in non-negative degrees.
@@ -64,13 +74,15 @@ A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$
 
 \subsection{Operads and props}
 
-Operads an props are respectively $\mathrm{S}$-modules and \mbox{$\mathrm{S}$-bimodules} enriched with further compositional structure. These structures are best understood by abstracting the compositional structure naturally present in the endomorphism $\mathrm{S}$-module $\End_A$, naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a prop.
+Operads an props are respectively $\mathrm{S}$-modules and \mbox{$\mathrm{S}$-bimodules} enriched with further compositional structure.
+These structures are best understood by abstracting the compositional structure naturally present in the coendomorphism $\mathrm{S}$-module $\End^A$, naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a prop.
 
 Succinctly, an operad $\mathcal O$ is an $\mathrm{S}$-module together with a collection of $R$-linear maps
 \begin{equation*}
 \mathcal O(r) \otimes \mathcal O(s) \to \mathcal O(r+s-1)
 \end{equation*}
-satisfying suitable associativity, equivariance and unitality conditions. A prop $\mathcal P$ is an $\mathrm{S}$-bimodule together with two types of compositions; horizontal
+satisfying suitable associativity, equivariance and unitality conditions.
+A prop $\mathcal P$ is an $\mathrm{S}$-bimodule together with two types of compositions; horizontal
 \begin{equation*}
 \mathcal P(r_1, s_1) \otimes \mathcal P(r_2, s_2) \to \mathcal P(r_1 + r_2, s_1 + s_2)
 \end{equation*}
@@ -78,25 +90,30 @@ and vertical
 \begin{equation*}
 \mathcal P(r,s) \otimes \mathcal P(s, t) \to \mathcal P(r, t)
 \end{equation*}
-satisfying their own versions of associativity, equivariance and unitality. For a complete presentation of these concepts we refer to Definition 11 and 54 of \cite{markl2008operads}.
+satisfying their own versions of associativity, equivariance and unitality.
+For a complete presentation of these concepts we refer to Definition 11 and 54 of \cite{markl2008operads}.
 
-We have already mentioned that for any chain complex $A$, the $\mathrm{S}$-module $\End_A$ is naturally an operad and the $\mathrm{S}$-bimodule $\End_A^A$ is naturally a prop. We add that considering $\End^A$ as an $\mathrm{S}$-module, its compositional structure also defines an operad structure on it.
+We add that for any prop $\mathcal P$, the compositional structure of $\mathcal P$ defines an operad structure on $U_1(\mathcal P)$ and $U_2(\mathcal P)$.
+We will use this automorphism without further notice when dealing with $\mathrm{S}^{op}$-modules.
 
-We remark that the compositional structure of a prop $\mathcal P$ restricts to operad structures on $U_1(\mathcal P)$ and $U_2(\mathcal P)$.
+We now introduce the type of operads that we are most interested in which, as we will discuss in the next section, are used to describe commutativity up to coherent homotopies.
 
-The type of operads that we are most interested in are $E_\infty$-operads which, as we will discuss in the next section, are used to describe commutativity up to coherent homotopies.
-
-\begin{definition} [\cite{may72geometry}, \cite{boardman1973homotopy}]
-	An operad is said to be $E_\infty$ if its underlying \mbox{$\mathrm{S}$-module} is $E_\infty$, and a prop $\mathcal P$ is said to be $E_\infty$ if either $U_1(\mathcal P)$ or $U(\mathcal P)$ is an \mbox{$E_\infty$-operad}.
+\begin{definition} [\cite{may72geometry}, \cite{boardman1973homotopy}] \label{def: e-infinity operad and prop}
+	An operad is said to be $E_\infty$ if its underlying \mbox{$\mathrm{S}$-module} is $E_\infty$, and a prop $\mathcal P$ is said to be $E_\infty$ if either $U_1(\mathcal P)$ or $U_2(\mathcal P)$ is an \mbox{$E_\infty$ operad}.
 \end{definition}
 
 \subsection{Algebras, coalgebra and bialgebras}
 
 A morphisms of operads or of props is simply a morphisms of their underlying $\mathrm{S}$-modules or $\mathrm{S}$-bimodules preserving the respective compositional structures.
 
-Given a chain complex $A$, an operad $\mathcal O$ and a prop $\mathcal P$. An $\mathcal O$-\textit{algebra} (resp. $\mathcal O$-\textit{coalgebra}) structure on $A$ is an operad morphism $\mathcal O \to \End_A$ (resp. $\mathcal O \to \End^A$), and a $\mathcal P$-\textit{bialgebra} structure on $A$ is a prop morphism $\mathcal P \to \End_A^A$.
+Given a chain complex $A$, an operad $\mathcal O$ and a prop $\mathcal P$.
+An $\mathcal O$-\textit{algebra} (resp. $\mathcal O$-\textit{coalgebra}) structure on $A$ is an operad morphism $\mathcal O \to \End_A$ (resp. $\mathcal O \to \End^A$), and a $\mathcal P$-\textit{bialgebra} structure on $A$ is a prop morphism $\mathcal P \to \End_A^A$.
 
 We remark that the linear duality functor naturally transforms an $\mathcal O$-coalgebra structure on a chain complex into an $\mathcal O$-algebra structure on its dual.
 
-Algebras over $E_\infty$-operads are the central objects of study in this work. To develop intuition for them, let us consider a chain complex $A$ with an algebra structure over $\underline{R}$, thought of as an operad with all compositions corresponding to the identity map $R \to R$. The $\underline{R}$-algebra structure on $A$ is generated by a linear map $\mu \colon A \otimes A \to A$ which is (strictly) commutative and associative, and a linear map $\eta \colon R \to A$ that determines a (two-sided) unit for $\mu$. Since $E_\infty$-operads are resolutions of $\underline{R}$, their algebras can be thought of as usual unital algebras where the commutativity and associativity relations hold up to coherent homotopies. The two main examples to keep in mind are the cochains of spaces and the chains of infinite loops spaces.	
+Algebras over $E_\infty$ operads are the central objects of study in this work.
+To develop intuition for them, let us consider a chain complex $A$ with an algebra structure over the constant functor $\underline{R}$, thought of as an operad with all compositions corresponding to the identity map $R \to R$.
+The $\underline{R}$-algebra structure on $A$ is generated by a linear map $\mu \colon A \otimes A \to A$ which is (strictly) commutative and associative, and a linear map $\eta \colon R \to A$ that determines a (two-sided) unit for $\mu$.
+Since $E_\infty$ operads are resolutions of $\underline{R}$, their algebras can be thought of as usual unital algebras where the commutativity and associativity relations hold up to coherent homotopies.
+The two main examples to keep in mind are the cochains of spaces and the chains of infinite loops spaces.	
 

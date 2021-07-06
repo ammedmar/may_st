@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath, amsfonts}
+\usepackage{csquotes}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+
+% sets
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+
+% funtors and operators
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\End}{\mathrm{End}}
+
+% other
+\renewcommand{\th}{^{\mathrm{th}}}
+
+\begin{document}
+	\title{Referee reply for ``Chain level Steenrod operations"}
+	\date{\today}
+	\maketitle
+	
+	We begin by thanking the referee for their careful reading and many valuable suggestions.
+	Below we include a point-by-point reply to the report.
+	
+	\section{Points raised by the referee}
+
+	\begin{enumerate}
+		\item Thank you for pointing this typo.
+		We have fixed it and many other similar mistakes.
+		\item We have followed all the suggestions presented in this point.
+		Explicitly,
+		\begin{enumerate}
+			\item Change the title from ``Chain level Steenrod operations" to ``Cochain level May-Steenrod operations".
+			\item Rename ``Steenrod-Adem structures" to ``May-Steenrod structures''.
+			\item Add a paragraph below Definition 7 explaining in more detail the relationship between our notion of May-Steenrod structure and those considered by May in his ``A general algebraic approach to Steenrod operations''.
+		\end{enumerate}
+		\item
+		\begin{enumerate}
+			\item We greatly expanded the discussion of Adem and Cartan relations, making explicit their dependence on the proofs by May.
+			We have also separated their treatment.
+			The Adem relations are a consequence of the fact that a May-Steenrod structure demands a factorization with the second factor a morphism of operads.
+			The (internal) Cartan relations require some compatibility with the coalgebra structure on the minimal resolution $\mathcal W$.
+			Something that was missing in the previous version of this paper and that we have now corrected by introducing the notion of a ``comultiplicative May-Steenrod structure''.
+			\item Add Remark 17 explaining that our map $\mathcal W \to \mathcal E$ factors through the (unreduced) bar resolution of $\mathrm C$, with the second map in the factorization induced from the chosen inclusions $\iota \colon \mathrm C_r \to \mathrm S_r$.
+		\end{enumerate}
+	\end{enumerate}
+
+	\section{Other changes}
+	\begin{enumerate}
+		\item We have removed the appendix containing two proofs and a sketch of a third one.
+		Specifically, we have moved the proof of Theorem 15 and 24 from the appendix to right below their statement, and replaced the sketch of proof of Proposition 28 with a reference to a complete proof.
+		\item To motivate the consideration of the cubical viewpoint, we have included a paragraph in the introduction mentioning Baues' cubical reformulation of Adams' cobar construction.
+		This implies that the constructions of this paper provides explicit descriptions of Steenrod operations on the cobar construction of chains of (reduced) simplicial sets
+	\end{enumerate}
+\end{document}
