@@ -1,13 +1,13 @@
 
-\section{May-Steenrod structures} \label{s:steenrod}
+\section{May--Steenrod structures} \label{s:steenrod}
 
 We now introduce an operadic structure giving rise to Steenrod operations based in \cite{may70generalapproach}.
 In our presentation we emphasize the integral structure needed to define them at every prime.
 For a more geometric treatment we refer the reader to \cites{may72geometry, may76homology, lawson2020n}, and for a different operadic approach at the even prime to \cite{chataur2005adem-cartan}.
 
 Let us assume the ground ring to be $\Z$ unless stated otherwise.
-\begin{definition} \label{def: May-Steenrod structure}
-	A \textit{May-Steenrod structure} on an operad $\mathcal O$ is a 
+\begin{definition} \label{def: May--Steenrod structure}
+	A \textit{May--Steenrod structure} on an operad $\mathcal O$ is a 
 	morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$ operad
 	\begin{equation*}
 	\begin{tikzcd}[column sep = normal, row sep = small]
@@ -20,16 +20,16 @@ Let us assume the ground ring to be $\Z$ unless stated otherwise.
 
 \begin{remark} \label{rmk: Deligne conjecture}
 	In \cite{GerstenhaberVoronov} an operad morphism $\mathcal{A}ssoc \to \mathcal O$ is referred to as a \textit{multiplication} on $\mathcal O$.
-	In this language, a choice of factorization $\phi \circ \iota$ of a May-Steenrod structure on $\mathcal O$ endows it with a \textit{commutative multiplication} $\phi$.
+	In this language, a choice of factorization $\phi \circ \iota$ of a May--Steenrod structure on $\mathcal O$ endows it with a \textit{commutative multiplication} $\phi$.
 \end{remark}
 
 \begin{definition} \label{def: Steenrod products}
 	Let $A$ be a chain complex.
-	A May-Steenrod structure on $\mathrm{End}_A$ is referred to as one on $A$.
+	A May--Steenrod structure on $\mathrm{End}_A$ is referred to as one on $A$.
 	Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod} $(r, i)$-\textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
 \end{definition}
 
-Let $A$ be equipped with a May-Steenrod structure
+Let $A$ be equipped with a May--Steenrod structure
 \begin{equation*}
 \begin{tikzcd}[column sep = normal, row sep = small]
 & \mathcal R \arrow[dr, "\phi", out=0] & \\
@@ -45,7 +45,7 @@ Furthermore, for $r$ equal to a prime $p$, tensoring the integers with $\F_p$ ma
 For any object $(A, \theta)$ in this category, Definition 2.2 in \cite{may70generalapproach} defines operations on the mod $p$ homology of $A$, a construction we review below.
 In particular, if $A$ is given by the cochains of a space these products agree with Steenrod's original definitions, and for $A$ being the chains on an infinite loop spaces, with those defined by Araki-Kudo and Dyer-Lashof.
 
-For the rest of this section $A$ denotes a chain complex equipped with a May-Steenrod structure.
+For the rest of this section $A$ denotes a chain complex equipped with a May--Steenrod structure.
 
 \begin{definition}
 	For any prime $p$, the $\mathbb{F}_p$-linear map
@@ -97,7 +97,7 @@ Steenrod operations defined as above satisfy the so called \textit{Adem relation
 Below we present its most common form and refer to Theorem 4.7 in \cite{may70generalapproach} for a complete list.
 
 \begin{lemma}
-	Let $A$ be equipped with a May-Steenrod structure.
+	Let $A$ be equipped with a May--Steenrod structure.
 	Then,
 	\begin{enumerate}
 		\item If $p = 2$ and $a > 2b$
@@ -120,7 +120,7 @@ Below we present its most common form and refer to Theorem 4.7 in \cite{may70gen
 So far we have considered $\mathrm{C}$-modules, operads and related structures over the category of chain complexes.
 It is also useful to consider them over the category of coalgebras, that is to say, requiring each chain complex to be equipped with a coproduct and all structure maps to be morphisms of coalgebras.	
 As described in Definition~1.2 of \cite{may70generalapproach}, the $\mathrm{C}$-module $\mathcal W$ lifts to this category.
-A \textit{comultiplicative May-Steenrod structure} on an operad $\mathcal O$ is a morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$ operad over the category of coalgebras
+A \textit{comultiplicative May--Steenrod structure} on an operad $\mathcal O$ is a morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$ operad over the category of coalgebras
 \begin{equation*}
 \begin{tikzcd}[column sep = normal, row sep = small]
 & \mathcal R \arrow[dr, "\phi", out=0] & \\
@@ -129,10 +129,10 @@ A \textit{comultiplicative May-Steenrod structure} on an operad $\mathcal O$ is 
 \end{equation*}
 such that $\iota$ is a quasi-isomorphism over the category of coalgebras and $\phi$ is a morphism of operads.
 
-Chain complexes equipped with a comultiplicative May-Steenrod structure satisfy the so called \textit{Cartan relations}.
+Chain complexes equipped with a comultiplicative May--Steenrod structure satisfy the so called \textit{Cartan relations}.
 
 \begin{lemma}
-	Let $A$ be equipped with a comultiplicative May-Steenrod structure.
+	Let $A$ be equipped with a comultiplicative May--Steenrod structure.
 	For any two mod $p$ homology classes $[\alpha]$ and $[\beta]$ we have
 	\begin{equation*}
 	P_s\big([\alpha] [\beta]\big) = \sum_{i+j=s} P_i\big( [\alpha] \big) P_j\big( [\beta] \big),
