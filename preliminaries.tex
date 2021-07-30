@@ -41,7 +41,7 @@ and refer to elements in the image of any $s_i$ as \textit{degenerate}.
 
 For each $n \in \mathbb{N}$, the simplicial set $\triangle^n$ is defined by
 \begin{equation*}
-\triangle^n_k  = \Hom_{\triangle} \big( [k], [n] \big), \qquad 
+\triangle^n_k = \Hom_{\triangle} \big( [k], [n] \big), \qquad 
 d_i(x) = x \circ \delta_i, \qquad 
 s_i(x) = x \circ \sigma_i,
 \end{equation*}
@@ -90,14 +90,10 @@ and refer to elements in the image of any $s_i$ as \textit{degenerate}.
 
 For each $n \in \mathbb{N}$, the cubical set $\square^n$ is defined by
 \begin{equation*}
-\square^n_k  = \Hom_{\square} \big( 2^k, 2^n \big), \qquad 
+\square^n_k = \Hom_{\square} \big( 2^k, 2^n \big), \qquad 
 d^\varepsilon_i(x) = x \circ \delta^\varepsilon_i, \qquad 
 s_i(x) = x \circ \sigma_i.
 \end{equation*}
-%notice that iteratively
-%\begin{equation*}
-%\square^n = \overbrace{\square^1 \times \cdots \times \square^1}^{n \text{ times }}.
-%\end{equation*}
 We represent the non-degenerate elements of $\square^n$ as sequences $x_1 \cdots\, x_n$ with each $x_i \in \big\{[0], [1], [0,1]\big\}$.
 For example, $[0][01][1]$ represents $\delta^1 \times \mathrm{id} \times \delta^0$.
 Any cubical set can be expressed as a colimit of these
@@ -109,7 +105,7 @@ The functor $N_\bullet$ of \textit{normalized chains} (with $R$-coefficients) is
 isomorphic to
 \begin{equation*}
 \begin{tikzcd} [column sep = small, row sep = 0.1pt]
-R\{[0], [1]\}  & \arrow[l] R\{[0,1]\} \\
+R\{[0], [1]\} & \arrow[l] R\{[0,1]\} \\
 {[1] - [0]} & \arrow[l, |->] \left[0,1\right].
 \end{tikzcd}
 \end{equation*}
