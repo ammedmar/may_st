@@ -1,5 +1,5 @@
 
-\section{Effective constructions} \label{s:effective}	
+\section{Effective constructions} \label{s:effective}
 
 In this section we construct explicit May--Steenrod structures on three well know combinatorial $E_\infty$-operads: the Barratt--Eccles operad $\mathcal E$ \cite{berger04combinatorial}, the surjection operad $\mathcal X$ \cite{mcclure03cochain}, and the operad $U(\mathcal M)$ associated to the finitely presented $E_\infty$-prop $\mathcal M$ introduced in \cite{medina2020prop1}.
 We also define natural and effective May--Steenrod structure on the normalized cochains of any simplicial or cubical set using that these are algebras over the operad $U(\mathcal M)$.
@@ -20,7 +20,7 @@ Figure~\ref{fig: bigsummary} presents a diagrammatical representation of the con
 \subsection{Barratt--Eccles operad} In this subsection we effectively describe a May--Steenrod structure on the Barratt--Eccles operad.
 
 We begin by reviewing the $\mathrm{S}$-module structure underlying the Barratt--Eccles operad and, since will not use it in this work, refer to \cite{berger04combinatorial} for a description of if composition structure.
-For a non-negative integer $r$ define the simplicial set $E(\mathrm S_r)$ by 
+For a non-negative integer $r$ define the simplicial set $E(\mathrm S_r)$ by
 \begin{equation} \label{eq: milnor model of symmetric}
 \begin{split}
 E(\mathrm S_r)_n &= \{ (\sigma_0, \dots, \sigma_n)\ |\ \sigma_i \in \mathrm{S}_r\}, \\
@@ -31,11 +31,11 @@ s_i(\sigma_0, \dots, \sigma_n) &= (\sigma_0, \dots, \sigma_i, \sigma_i, \dots, \
 with a left $\mathrm S_r$-action given by
 \begin{equation*}
 \sigma (\sigma_0, \dots, \sigma_n) = (\sigma \sigma_0, \dots, \sigma \sigma_n).
-\end{equation*} 
+\end{equation*}
 The chain complex resulting from applying the functor of normalized integral chains to it is denoted $\mathcal E(r)$, which corresponds to the arity $r$ part of the Barratt--Eccles operad.
 
 \begin{definition} \label{def: Steenrod-Adem on Barratt--Eccles}
-	For every $r \geq 0$, let $\psi_{\mathcal E}(r) \colon \mathcal W(r) \to \mathcal E(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined on basis elements by 
+	For every $r \geq 0$, let $\psi_{\mathcal E}(r) \colon \mathcal W(r) \to \mathcal E(r)$ be the $\Z[\mathrm{C}_r]$-linear map defined on basis elements by
 	\begin{equation*}
 	\psi_{\mathcal E}(r)(e_{n}) = \begin{cases}
 	\displaystyle{\sum_{r_1, \dots, r_m}} \big(\rho^0, \rho^{r_1}, \rho^{r_1+1}, \rho^{r_2}, \dots, \rho^{r_{m}}, \rho^{r_{m}+1} \big) & n = 2m, \\
@@ -68,8 +68,8 @@ The chain complex resulting from applying the functor of normalized integral cha
 	and assume $\psi(\partial e_{k-1}) = \partial \psi(e_{k-1})$.
 	If $k = 2n$ we have
 	\begin{align*}
-	\partial \psi(e_{2n}) & = 
-	\partial \sum_{r_1, \dots, r_n} 
+	\partial \psi(e_{2n}) & =
+	\partial \sum_{r_1, \dots, r_n}
 	\big(\rho^0, \rho^{r_1}, \rho^{r_1+1}, \dots, \rho^{r_n}, \rho^{r_n+1} \big) \\ & =
 	\partial \sum_{r_2, \dots, r_n} \sum_{r_1 = 0}^{p-1}
 	\big(\rho^0, \rho^{r_1} \, (\rho^0, \rho^{1}, \dots, \rho^{r_n-r_1}, \rho^{r_n - r_1 +1}) \big) \\ & =
@@ -86,8 +86,8 @@ The chain complex resulting from applying the functor of normalized integral cha
 	\end{align*}
 	If $k = 2n+1$ we have
 	\begin{align*}
-	\partial \psi(e_{2n+1}) & = 
-	\partial \sum_{r_1, \dots, r_n} 
+	\partial \psi(e_{2n+1}) & =
+	\partial \sum_{r_1, \dots, r_n}
 	\big(\rho^0, \rho^1, \rho^{r_1}, \rho^{r_1+1}, \dots, \rho^{r_n}, \rho^{r_n+1} \big) \\ & =
 	\partial \sum_{r_1, \dots, r_n}
 	\big(\rho^0, \rho^{1} \, (\rho^0, \rho^{r_1-1}, \rho^{r_1}, \dots, \rho^{r_n - 1}, \rho^{r_n}) \big) \\ & =
@@ -127,12 +127,12 @@ The chain complex resulting from applying the functor of normalized integral cha
 			& & & + (0,2,0,1,2) + (0,2,0,2,0) \\
 			\hline
 			4 & (0,1,2) + (0,2,3) & (0,1,2,3) + (0,1,3,0) & \phantom{+} (0,1,2,3,0) + (0,1,2,0,1) \\
-			& + (0,3,0) & + (0,1,0,1) & 
+			& + (0,3,0) & + (0,1,0,1) &
 			+ (0,1,2,1,2) + (0,2,3,0,1) \\
 			& & & + (0,2,3,1,2) + (0,2,3,2,3) \\
 			& & & + (0,3,0,1,2) + (0,3,0,2,3) \\
 			& & & + (0,3,0,3,0) \\
-			\hline 
+			\hline
 		\end{tabular}
 	}
 	\vspace*{3pt}
@@ -224,19 +224,19 @@ p^{r-1} i^{r-1} = \mathrm{id}
 	and assume $\psi(\partial e_{n-1}) = \partial \psi(e_{n-1})$.
 	For $n = 2m+1$ we have
 	\begin{align*}
-	\partial \psi(e_{2m+1}) 
+	\partial \psi(e_{2m+1})
 	& =
 	\partial\, h\, T\, \psi(e_{2m}) \big) \\
 	& =
 	T\, \psi(e_{2m}) - i^{r-1} p^{r-1}\, \psi(e_{2m}) -
 	h\, \partial\, T\, \psi(e_{2m}) \big) \\
 	& =
-	T\, \psi(e_{2m}) - 
+	T\, \psi(e_{2m}) -
 	h\, T\, \psi(\partial\, e_{2m}) \big) \\
 	& =
-	T\, \psi(e_{2m}) - 
+	T\, \psi(e_{2m}) -
 	h\, \psi(T\,N\, e_{2m-1}) \big) \\
-	& = 
+	& =
 	T \psi(e_{2m}).
 	\end{align*}
 	For $n = 2m$ the proof is analogous.
@@ -267,7 +267,7 @@ For the rest of the paper we use the McClure--Smith sign convention on $\mathcal
 			4 & \phantom{+} (1,2,3,4,1,2) + (1,3,4,1,2,3) & \phantom{+} (1,2,3,4,1,2,3) + (1,2,4,1,2,3,4) & \\
 			& + (1,2,3,4,2,3) + (1,4,1,2,3,4) & + (1,2,3,4,1,3,4) + (1,2,1,2,3,4,1) & 25 \text{ terms } \\
 			& + (1,2,4,2,3,4) + (1,2,3,4,3,4) & + (1,2,3,1,3,4,1) + (1,2,3,4,1,4,1) & \\
-			\hline 
+			\hline
 		\end{tabular}
 	}
 	\vspace*{2pt}
@@ -278,7 +278,7 @@ For the rest of the paper we use the McClure--Smith sign convention on $\mathcal
 \subsection{The $E_\infty$-prop $\mathcal M$}
 
 We start by reviewing the finitely presented $E_\infty$-prop introduced in \cite{medina2020prop1}.
-Let $\mathcal M$ be the prop generated by 
+Let $\mathcal M$ be the prop generated by
 \begin{equation*}
 \counit \in \mathcal M(1,0)_0, \hspace*{.6cm} \coproduct \in \mathcal M(1,2)_0, \hspace*{.6cm} \product \in \mathcal M(2,1)_1,
 \end{equation*}
@@ -296,7 +296,7 @@ More precisely, it shows that the associated operad $U_2(\mathcal M) = \big\{ \m
 For the remainder of this article we write $U(\mathcal M)$ instead of $U_2(\mathcal M)$.
 
 We will define a May--Steenrod structure $\psi_{U(\mathcal M)} \colon \mathcal W \to U(\mathcal M)$ by composing the May--Steenrod structure $\psi_{\mathcal X} \colon \mathcal W \to \mathcal X$ with a morphism $SL \colon \mathcal X \to U(\mathcal M)$ of $\mathrm{C}$-modules ($\mathrm{S}$-modules in fact) that we now define.
-Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\}$ let $SL(s)$ be the element represented by the connected $(1,r)$-graph
+Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\}$ let $SL(s)$ be the element represented by the immersed connected $(1,r)$-graph
 \begin{center}
 	\begin{tikzpicture}[scale=.85]
 	\draw (0,0)--(0,-.6) node[below]{$\scriptstyle 1$};
@@ -304,25 +304,25 @@ Given a surjection $s \colon \{1, \dots, n+r\} \to \{1, \dots, r\}$ let $SL(s)$ 
 	\draw (-.3, .3)-- (-.2,.5) node[above]{\quad $\scriptstyle 1\ 2\, ...\, k_1$};
 	\draw (-.5,.5)--(0,0);
 	\node at (.11,.4){$...$};
-	
+
 	\node at (1,0){$\scriptstyle \cdots$};
 	\node at (1,-.9){$\scriptstyle \cdots$};
-	
+
 	\draw (2,0)--(2,-.68) node[below]{$\scriptstyle r$};
 	\draw (2,0)--(2.5,.5);
 	\draw (1.7, .3)-- (1.8,.5) node[above]{\quad $\scriptstyle 1\ 2\, ...\, k_r$};
 	\draw (1.5,.5)--(2,0);
 	\node at (2.11,.4){$...$};
-	
+
 	\draw (1,2.5)--(1,3) node[above]{$\scriptstyle 1$};
 	\draw (1,2.5)--(0,2) node[below]{$\scriptstyle 1$};
 	\draw (.25,2.125)--(.5,2) node[below]{$\scriptstyle 2$};
 	\draw (.5,2.25)--(1,2) node[below]{$\scriptstyle 3$};
 	\draw (1,2.5)--(2,2) node[below]{\quad $\scriptstyle n + r$};
 	\node at (1.5,1.75){$...$};
-	
+
 	\node at (1,1.3) {$\vdots$};
-	
+
 	\node at (2.85,0){};
 	\end{tikzpicture}
 \end{center}
@@ -351,38 +351,38 @@ Since both operads have the homology of a point and $(1, \dots, r)$ is sent to a
 	\centering
 	\boxed{
 		\begin{tikzpicture}[scale=.55]
-		\draw (1,3.7) to (1,3); 
-		
+		\draw (1,3.7) to (1,3);
+
 		\draw (1,3) to [out=205, in=90] (0,0);
-		\draw (1,3) to [out=-25, in=90] (2,0); 
-		
+		\draw (1,3) to [out=-25, in=90] (2,0);
+
 		\node at (1,-.5){$n=0$};
 		\end{tikzpicture}\hspace*{1cm}
 		\begin{tikzpicture}[scale=.55]
-		\draw (1,3.7) to (1,3); 
-		
+		\draw (1,3.7) to (1,3);
+
 		\draw (1,3) to [out=205, in=90] (0,0);
-		
+
 		\draw [shorten >= 0cm] (.6,2.73) to [out=-100, in=90] (2,0);
 		%\draw [shorten <= 0cm] (1,1.5) to [out=-60, in=90] (2,0);
-		
+
 		\draw [shorten >= .15cm] (1,3) to [out=-25, in=30, distance=1.1cm] (1,1.5);
 		\draw [shorten <= .1cm] (1,1.5) to [out=210, in=20] (0,1);
-		
+
 		\node at (1,-.5){$n=1$};
 		\end{tikzpicture}\hspace*{1cm}
 		\begin{tikzpicture}[scale=.55]
-		\draw (1,3.7) to (1,3); 
-		
+		\draw (1,3.7) to (1,3);
+
 		\draw (1,3) to [out=205, in=90] (0,0);
-		\draw (1,3) to [out=-25, in=90] (2,0); 
-		
+		\draw (1,3) to [out=-25, in=90] (2,0);
+
 		\draw [shorten >= 0cm] (.6,2.73) to [out=210, in=135] (1,1.5);
 		\draw [shorten <= 0cm] (1,1.5) to [out=-45, in=170] (2,1);
-		
+
 		\draw [shorten >= .1cm] (1.4,2.73) to [out=-30, in=45] (1,1.5);
 		\draw [shorten <= .1cm] (1,1.5) to [out=-135, in=10] (0,1);
-		
+
 		\node at (1,-.5){$n=2$};
 		\end{tikzpicture}
 	}
@@ -450,30 +450,30 @@ For applications related to the cohomology of spaces, it is convenient to introd
 	Let us consider the prime $2$.
 	The value $P^1(x)\big([0,1,2,3,4]\big)$ for a homogeneous cocycle $x$ in $N^{-3}(\triangle^4)$ is equal to the value of $x^{\otimes 2}$ acting on
 	\begin{align*}
-	[0, 1, 2, 3] \otimes [0, 1, 3, 4] \ +\ & 
-	[0, 2, 3, 4] \otimes [0, 1, 2, 4] \\ \ +\ 
+	[0, 1, 2, 3] \otimes [0, 1, 3, 4] \ +\ &
+	[0, 2, 3, 4] \otimes [0, 1, 2, 4] \\ \ +\
 	[0, 1, 2, 3] \otimes [1, 2, 3, 4] \ +\ &
 	[0, 1, 3, 4] \otimes [1, 2, 3, 4].
 	\end{align*}
 	Similarly, the value of $P^2(y)\big([0,1,2,3,4,5,6,7]\big)$ for a homogeneous cocycle $y$ in $N^{-5}(\triangle^7)$ is equal to the value of $y^{\otimes 2}$ acting on
 	\begin{align*}
 	[0, 1, 2, 5, 6, 7] \otimes [0, 1, 2, 3, 4, 5] & \ +\
-	[0, 1, 2, 3, 6, 7] \otimes [0, 1, 3, 4, 5, 6] \\ \ +\ 
-	[0, 1, 2, 3, 4, 7] \otimes [0, 1, 4, 5, 6, 7] & \ +\ 
-	[0, 2, 3, 5, 6, 7] \otimes [0, 1, 2, 3, 4, 5] \\ \ +\ 
-	[0, 2, 3, 4, 6, 7] \otimes [0, 1, 2, 4, 5, 6] & \ +\ 
-	[0, 2, 3, 4, 5, 7] \otimes [0, 1, 2, 5, 6, 7] \\ \ +\ 
-	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 4, 5] & \ +\ 
-	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 5, 6] \\ \ +\ 
-	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 6, 7] & \ +\ 
-	[0, 1, 2, 3, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\ 
-	[0, 1, 2, 3, 4, 7] \otimes [1, 2, 4, 5, 6, 7] & \ +\ 
-	[0, 1, 3, 4, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\ 
-	[0, 1, 3, 4, 5, 7] \otimes [1, 2, 3, 5, 6, 7] & \ +\ 
-	[0, 1, 4, 5, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\ 
-	[0, 1, 4, 5, 6, 7] \otimes [1, 2, 3, 4, 6, 7] & \ +\ 
-	[0, 1, 2, 3, 4, 7] \otimes [2, 3, 4, 5, 6, 7] \\ \ +\ 
-	[0, 1, 2, 4, 5, 7] \otimes [2, 3, 4, 5, 6, 7] & \ +\ 
+	[0, 1, 2, 3, 6, 7] \otimes [0, 1, 3, 4, 5, 6] \\ \ +\
+	[0, 1, 2, 3, 4, 7] \otimes [0, 1, 4, 5, 6, 7] & \ +\
+	[0, 2, 3, 5, 6, 7] \otimes [0, 1, 2, 3, 4, 5] \\ \ +\
+	[0, 2, 3, 4, 6, 7] \otimes [0, 1, 2, 4, 5, 6] & \ +\
+	[0, 2, 3, 4, 5, 7] \otimes [0, 1, 2, 5, 6, 7] \\ \ +\
+	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 4, 5] & \ +\
+	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 5, 6] \\ \ +\
+	[0, 3, 4, 5, 6, 7] \otimes [0, 1, 2, 3, 6, 7] & \ +\
+	[0, 1, 2, 3, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\
+	[0, 1, 2, 3, 4, 7] \otimes [1, 2, 4, 5, 6, 7] & \ +\
+	[0, 1, 3, 4, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\
+	[0, 1, 3, 4, 5, 7] \otimes [1, 2, 3, 5, 6, 7] & \ +\
+	[0, 1, 4, 5, 6, 7] \otimes [1, 2, 3, 4, 5, 6] \\ \ +\
+	[0, 1, 4, 5, 6, 7] \otimes [1, 2, 3, 4, 6, 7] & \ +\
+	[0, 1, 2, 3, 4, 7] \otimes [2, 3, 4, 5, 6, 7] \\ \ +\
+	[0, 1, 2, 4, 5, 7] \otimes [2, 3, 4, 5, 6, 7] & \ +\
 	[0, 1, 2, 5, 6, 7] \otimes [2, 3, 4, 5, 6, 7].
 	\end{align*}
 \end{example}
@@ -505,13 +505,13 @@ where
 \epsilon([0]) = \epsilon([1]) = 1, \qquad \epsilon([0, 1]) = 0.
 \end{equation*} \vspace*{-6pt} \\
 (2) The coproduct $\Delta \in \Hom \left( N_\bullet(\square^n), N_\bullet(\square^n)^{\otimes 2} \right)$ by
-\begin{equation*}	
-\Delta (x_1 \otimes \cdots \otimes x_n) = 	
-\sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes 	
-\left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),	
-\end{equation*}	
+\begin{equation*}
+\Delta (x_1 \otimes \cdots \otimes x_n) =
+\sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes
+\left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),
+\end{equation*}
 where the sign is determined using the Koszul convention, and we are using Sweedler's notation
-\begin{equation*}	
+\begin{equation*}
 \Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)}
 \end{equation*}
 for the chain map $\Delta \colon N_\bullet(\square^1) \to N_\bullet(\square^1)^{\otimes 2}$ defined by
@@ -534,7 +534,7 @@ where
 \begin{align*}
 x_{<i} & = x_1 \otimes \cdots \otimes x_{i-1}, &
 y_{<i} & = y_1 \otimes \cdots \otimes y_{i-1}, \\
-x_{>i} & = x_{i+1} \otimes \cdots \otimes x_n, & 
+x_{>i} & = x_{i+1} \otimes \cdots \otimes x_n, &
 y_{>i} & = y_{i+1} \otimes \cdots \otimes y_n,
 \end{align*}
 with the convention
