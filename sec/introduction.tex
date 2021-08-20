@@ -1,0 +1,45 @@
+
+\section{Introduction} \label{s:introduction}
+
+The role Steenrod operations play in stable homotopy theory is hard to overstate.
+The reason is that, given the representability of the cohomology functor, these operations together with the Bockstein homomorphism can be used to give a complete description of the algebraic structure naturally present on the mop-$p$ \mbox{cohomology} algebra of spaces.
+For the even prime, Steenrod squares were introduced in \cite{steenrod1947products} via an explicit choice of coherent homotopical corrections to the broken symmetry of Alexander--Whitney's chain approximation to the diagonal, the so called cup-$i$ products.
+Later, for odd primes, their definition was given non-effectively using arguments based on the mod $p$ homology of symmetric groups \cite{steenrod1952reduced, steenrod1962cohomology, steenrod1962cohomology}.
+This viewpoint enhanced the conceptual understanding of the operations and allowed for many advances \cite{adem1952iteration, milnor1958dual, adams1995stable}, but lacked the concreteness of their definition at the even prime.
+The purpose of this paper is to fill this gap in the literature, introducing effective descriptions of multioperations at the cochain level generalizing Steenrod's cup-$i$ products defining Steenrod operations at all primes.
+
+In recent years, thanks to the development of new applications of cohomology, most notably in applied topology and topological quantum field theories, the need to have an effectively computable definition of Steenrod operations has gain considerable importance.
+
+In applied topology, the use of persistence homology \cite{edelsbrunner2002topological, carlsson2005barcode} has open many new interdisciplinary research directions \cite{chan2013viral, hess2017cliques}, and the availability of formulae for the cup-$i$ products allowed for the development of a theory of persistence Steenrod modules accessing finer features of the data \cite{medina2018persistence}.
+
+The chain level viewpoint for the study of homology operations was brought to the forefront by string topology \cite{sullivan2007presentstate}, and as served as a major driver of innovation \cite{tradler2007string, hoch2}.
+
+In lattice field theory, cup-$i$ products are used in the construction of effective actions \cite{gaiotto2016spin, bhardwaj2017fermionic, kapustin2017fermionic}, and this connection with physics motivated the development of effective versions of spin bordism \cite{brumfiel2016pontrjagin, brumfiel2018quadratic} prominently featuring higher derived structures at the cochain level \cite{medina2020cartan, medina2021adem}.
+
+Following \cite{may1970general}, we take a more general approach to Steenrod operations that also includes Araki--Kudo--Dyer--Lashof operations on the mod $p$ homology of infinite loop spaces \cite{araki56squaring, dyer62lashof}.
+We use the language of operads \cite{may1972geometry} to describe at the (co)chain level the integral structure required to define (co)homology operations at every prime.
+We then describe effective constructions of this structure on three prominent models of the $E_\infty$-operad, identifying elements in them that represent Steenrod operations in the mod $p$ homology of their algebras; these are the Barratt--Eccles \cite{berger2004combinatorial}, surjection \cite{mcclure2003multivariable}, and $U(\mathcal M)$ \cite{medina2020prop1} operads.
+Since the cochains of simplicial sets are equipped with effective and compatible algebra structures over each of these operads, we are able to explicitly describe canonical multioperations generalizing the \mbox{cup-$i$} products of Steenrod to every prime.
+An alternative approach based on the Eilenberg--Zilber contraction can be found in \cite{gonzalez2005cocyclic}.
+The $p = 2$ part of our constructions specialize in the simplicial context to the definition of cup-$i$ products given by Steenrod \cite{steenrod1947products} and recovered by several authors \cite{mcclure2003multivariable, berger2004combinatorial, medina2021newformulas}, and in the cubical setting to the cup-$i$ products of Kadeishvili \cite{kadeishvili2003cupi} and Kr\v{c}\'{a}l--Pilarczy \cite{pilarczyk2016cubical}.
+
+A context where the cubical viewpoint arises naturally is the study of loop spaces.
+This is through Baues' geometric generalization of Adams' cobar construction \cite{adams1956cobar, baues1998hopf}.
+Using Baues' work, an application of the constructions presented in this paper is the explicit descriptions of Steenrod operations on the cobar construction on the coalgebra of chains of reduced simplicial sets \cite{medina2021cobar}.
+
+Emphasizing their constructive nature, an implementation of all the constructions in this article can be found in the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
+
+\subsection{Outline}
+
+We first introduce, in Section~\ref{s:preliminaries}, the conventions we will follow regarding chain complexes, simplicial sets and cubical sets.
+Then, in Section~\ref{s:goup homology}, we review the key notions from group homology which we will use mainly for cyclic and symmetric groups.
+Section~\ref{s:operads} is devoted to the language of operads and related structures, which we use in Section~\ref{s:steenrod} to introduce the notion of May--Steenrod structure, an integral structure at the (co)chain level inducing Steenrod operations for every prime.
+Section~\ref{s:effective}, the bulk of this work, presents effective constructions of May--Steenrod structures on the Barratt--Eccles, surjection, and $U(\mathcal M)$ operads.
+It also describes a natural $U(\mathcal M)$-algebra structure on the cochains of simplicial and cubical sets inducing natural May--Steenrod structures on them.
+We end, in Section~\ref{s:outlook}, with an overview of some connections of this work to certain geometric and combinatorial structures and provide an outline of future research directions.
+
+\section*{Acknowledgement}
+
+The authors thank Dennis Sullivan, Kathryn Hess, Clemens Berger, John Morgan, Dev Sinha, Greg Brumfiel, Federico Cantero-Mor\'an, Jens Kjaer, Calista Bernard, and Andy Putnam for insightful discussions, and to the anonymous referee for many keen observations and helpful suggestions.
+
+A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT-1}, and the hospitality of the \textit{Laboratory for Topology and Neuroscience} at EPFL

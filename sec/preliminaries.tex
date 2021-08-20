@@ -24,12 +24,12 @@ The rings we will mostly be interested in are the group rings $\Z[\mathrm G]$ an
 The \textit{simplex category} $\triangle$ is defined to have an object $[n] = \{0, \dots, n\}$ for every $n \in \mathbb{N}$ and a morphism $[m] \to [n]$ for each order-preserving function from $[m]$ to $[n]$.
 The morphisms $\delta_i \colon [n-1] \to [n]$ and $\sigma_i \colon [n+1] \to [n]$ defined for $0 \leq i \leq n$ by
 \begin{equation*}
-\delta_i(k) = 
+\delta_i(k) =
 \begin{cases} k & k < i, \\ k+1 & i \leq k, \end{cases}
 \quad \text{ and } \quad
-\sigma_i(k) = 
+\sigma_i(k) =
 \begin{cases} k & k \leq i, \\ k-1 & i < k, \end{cases}
-\end{equation*} 
+\end{equation*}
 generate all morphisms in the simplex category.
 
 A \textit{simplicial set} $X$ is a contravariant functor from the simplex category to the category of sets, and a simplicial map is a natural transformation between two simplicial sets.
@@ -41,8 +41,8 @@ and refer to elements in the image of any $s_i$ as \textit{degenerate}.
 
 For each $n \in \mathbb{N}$, the simplicial set $\triangle^n$ is defined by
 \begin{equation*}
-\triangle^n_k = \Hom_{\triangle} \big( [k], [n] \big), \qquad 
-d_i(x) = x \circ \delta_i, \qquad 
+\triangle^n_k = \Hom_{\triangle} \big( [k], [n] \big), \qquad
+d_i(x) = x \circ \delta_i, \qquad
 s_i(x) = x \circ \sigma_i,
 \end{equation*}
 and any simplicial set can be expressed as a colimit of these
@@ -51,7 +51,7 @@ X = \colim_{\triangle^n \to X} \triangle^n.
 \end{equation*}
 We represent the non-degenerate elements of $\triangle^n_k$ as an increasing sequence $[v_0, \dots, v_k]$ of non-negative integers each less than or equal to $n$.
 
-The functor $N_\bullet$ of \textit{normalized chains} (with $R$-coefficients) is defined as follows: 
+The functor $N_\bullet$ of \textit{normalized chains} (with $R$-coefficients) is defined as follows:
 \begin{equation*}
 N_\bullet(X; R)_n = \frac{R \{ X_n \}}{R \{ s(X_{n-1}) \}}
 \end{equation*}
@@ -90,15 +90,15 @@ and refer to elements in the image of any $s_i$ as \textit{degenerate}.
 
 For each $n \in \mathbb{N}$, the cubical set $\square^n$ is defined by
 \begin{equation*}
-\square^n_k = \Hom_{\square} \big( 2^k, 2^n \big), \qquad 
-d^\varepsilon_i(x) = x \circ \delta^\varepsilon_i, \qquad 
+\square^n_k = \Hom_{\square} \big( 2^k, 2^n \big), \qquad
+d^\varepsilon_i(x) = x \circ \delta^\varepsilon_i, \qquad
 s_i(x) = x \circ \sigma_i.
 \end{equation*}
 We represent the non-degenerate elements of $\square^n$ as sequences $x_1 \cdots\, x_n$ with each $x_i \in \big\{[0], [1], [0,1]\big\}$.
 For example, $[0][01][1]$ represents $\delta^1 \times \mathrm{id} \times \delta^0$.
 Any cubical set can be expressed as a colimit of these
 \begin{equation*}
-X = \colim_{\square^n \to X} \square^n.
+X \cong \colim_{\square^n \to X} \square^n.
 \end{equation*}
 
 The functor $N_\bullet$ of \textit{normalized chains} (with $R$-coefficients) is defined as follows: The chain complex $N_\bullet(\square^1)$ is simply the cellular chain complex of the interval,
