@@ -8,5 +8,5 @@
 *.synctex.gz
 *.toc
 *.txss
-*.zip
-source/
+*.bcf
+*.xml
