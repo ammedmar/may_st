@@ -26,7 +26,7 @@ Let us assume the ground ring to be $\Z$ unless stated otherwise.
 \begin{definition} \label{def: Steenrod products}
 	Let $A$ be a chain complex.
 	A May--Steenrod structure on $\mathrm{End}_A$ is referred to as one on $A$.
-	Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod} $(r, i)$-\textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
+	Given one such structure $\psi \colon \mathcal W \to \End_A$, the \textit{Steenrod cup-}$(r, i)$ \textit{product} of $A$ is defined for every $r, i \geq 0$ as the image in $ \mathrm{End}(A^{\otimes r}, A)$ of $\psi(e_i)$.
 \end{definition}
 
 Let $A$ be equipped with a May--Steenrod structure
@@ -52,7 +52,7 @@ For the rest of this section $A$ denotes a chain complex equipped with a May--St
 	\begin{equation*}
 	D^p_i \colon (A \otimes \mathbb{F}_p) \to (A \otimes \mathbb{F}_p)
 	\end{equation*}
-	is defined by sending $a$ to the Steenrod $(p, i)$-product of $(a \otimes \cdots \otimes a) \in (A \otimes \mathbb{F}_p)^{\otimes p}$ if $i \geq 0$ and to $0$ otherwise.
+	is defined by sending $a$ to the Steenrod cup-$(p, i)$ product of $(a \otimes \cdots \otimes a) \in (A \otimes \mathbb{F}_p)^{\otimes p}$ if $i \geq 0$ and to $0$ otherwise.
 \end{definition}
 
 We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q + i$.
@@ -65,10 +65,10 @@ We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q 
 	is defined by sending the class represented by a cycle $a \in (A \otimes \mathbb{F}_2)$ of degree $q$ to the class represented by $D^2_{s-q}(a)$.
 \end{definition}
 
-Notice that the Steenrod squares are determined by the Steenrod $(2,i)$-products with $\mathbb{F}_2$-coefficients.
+Notice that the Steenrod squares are determined by the Steenrod cup-$(2,i)$ products with $\mathbb{F}_2$-coefficients.
 These binary operations are known as cup-$i$ products \cite{steenrod1947products, medina2021newformulas}.
-In a similar way, the operations $P$ and $\beta P$ defined below for odd primes are determined by the Steenrod $\big(p, k(p-1)-\varepsilon\big)$-products for $\varepsilon \in \{0,1\}$.
-We can explain the appearance of these specific Steenrod products as follows.
+In a similar way, the operations $P$ and $\beta P$ defined below for odd primes are determined by the Steenrod cup-$\big(p, k(p-1)-\varepsilon\big)$ products for $\varepsilon \in \{0,1\}$.
+We can explain the appearance of these specific Steenrod cup-$(p,1)$products as follows.
 The increase on the degree of a $q$-cycle after applying $D^p_{k(p-1)-\varepsilon}$ to it is $(p-1)(q+k) - \varepsilon$, which can be rewritten as $2t(p-1) - \varepsilon$ if $q$ is even an $(2t+1)(p-1) - \varepsilon$ if $q$ is odd.
 According to Lemma \ref{lem: Thom's theorem}, these are the only homologically non-trivial cases.
 
