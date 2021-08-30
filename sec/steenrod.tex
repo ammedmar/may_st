@@ -20,7 +20,7 @@ Let us assume the ground ring to be $\Z$ unless stated otherwise.
 
 \begin{remark} \label{rmk: Deligne conjecture}
 	In \cite{GerstenhaberVoronov} an operad morphism $\mathcal{A}ssoc \to \mathcal O$ is referred to as a \textit{multiplication} on $\mathcal O$.
-	In this language, a choice of factorization $\phi \circ \iota$ of a May--Steenrod structure on $\mathcal O$ endows it with a \textit{commutative multiplication} $\phi$.
+	In this language, a choice of factorization $\phi \circ \iota$ of a May--Steenrod structure on $\mathcal O$ endows it with $\phi$ a \textit{multiplication commutative up to coherent homotopies}.
 \end{remark}
 
 \begin{definition} \label{def: Steenrod products}
@@ -38,11 +38,11 @@ Let $A$ be equipped with a May--Steenrod structure
 \end{equation*}
 We can relate this structure on $A$ to those considered by May in \cite{may1970general} as follows.
 The morphism $\phi$ provides $A$ with the structure of a homotopy associative algebra defined by the image in $\Hom(A^{\otimes 2}, A)$ of a representative in $\mathcal R(2)$ of a generator of its $0\th$-homology.
-Restricting $\psi$ to arity $r$ defines a map $\theta \colon \mathcal W(r) \otimes A^{\otimes r} \to A$ and the pair $(A, \theta)$ into an object in May's category $\mathfrak{C}(\mathrm C_r, \infty, \Z)$ as presented in Definitions 2.1 op. cit.
-Explicitly, this pair is such that $\psi(e_0) \in \End_A(r)$ is $\mathrm C_r$-homotopic to the iterated product $A^{\otimes r} \to A$.
+Restricting $\psi$ to arity $r$ defines a map $\theta \colon \mathcal W(r) \otimes A^{\otimes r} \to A$ that makes the pair $(A, \theta)$ into an object in May's category $\mathfrak{C}(\mathrm C_r, \infty, \Z)$ as presented in Definitions 2.1 op. cit.
+Explicitly, this means that the pair is such that $\psi(e_0) \in \End_A(r)$ is $\mathrm C_r$-homotopic to the iterated product $A^{\otimes r} \to A$.
 A claim that follows from the iterated product being a representative of a generator of the $0\th$-homology of $\mathcal R(r)$, and $\iota$ being a quasi-isomorphism of $\mathrm C$-modules.
 Furthermore, for $r$ equal to a prime $p$, tensoring the integers with $\Fp$ makes the pair $(A, \theta)$ into an object in May's category $\mathfrak{C}(\mathrm C_p, \infty, \mathbb{F}_p)$.
-For any object $(A, \theta)$ in this category, Definition 2.2 in \cite{may1970general} defines operations on the mod $p$ homology of $A$, a construction we review below.
+For any object $(A, \theta)$ in this category, Definition~2.2 in \cite{may1970general} defines operations on the mod $p$ homology of $A$, a construction we review below.
 In particular, if $A$ is given by the cochains of a space these products agree with Steenrod's original definitions, and for $A$ being the chains on an infinite loop spaces, with those defined by Araki--Kudo and Dyer--Lashof.
 
 For the rest of this section $A$ denotes a chain complex equipped with a May--Steenrod structure.
@@ -65,11 +65,11 @@ We notice that if $a$ is of degree $q$ then $D^p_i(a)$ is of degree $q + (p-1)q 
 	is defined by sending the class represented by a cycle $a \in (A \otimes \mathbb{F}_2)$ of degree $q$ to the class represented by $D^2_{s-q}(a)$.
 \end{definition}
 
-Notice that the Steenrod squares are determined by the Steenrod cup-$(2,i)$ products with $\mathbb{F}_2$-coefficients.
-These binary operations are known as cup-$i$ products \cite{steenrod1947products, medina2021newformulas}.
+Notice that the Steenrod operations above, corresponding to Steenrod squares in the context of spaces, are determined by the Steenrod cup-$(2,i)$ products with $\mathbb{F}_2$-coefficients.
+These binary operations are known as cup-$i$ products \cite{steenrod1947products, medina2021newformulas} in the space context.
 In a similar way, the operations $P$ and $\beta P$ defined below for odd primes are determined by the Steenrod cup-$\big(p, k(p-1)-\varepsilon\big)$ products for $\varepsilon \in \{0,1\}$.
-We can explain the appearance of these specific Steenrod cup-$(p,1)$products as follows.
-The increase on the degree of a $q$-cycle after applying $D^p_{k(p-1)-\varepsilon}$ to it is $(p-1)(q+k) - \varepsilon$, which can be rewritten as $2t(p-1) - \varepsilon$ if $q$ is even an $(2t+1)(p-1) - \varepsilon$ if $q$ is odd.
+We can explain the appearance of these specific Steenrod cup-$(p,1)$ products as follows.
+The increase on the degree of a $q$-cycle after applying $D^p_{k(p-1)-\varepsilon}$ to it is $(p-1)(q+k) - \varepsilon$, which can be rewritten as $2t(p-1) - \varepsilon$ if $q$ is even and $(2t+1)(p-1) - \varepsilon$ if $q$ is odd.
 According to Lemma \ref{lem: Thom's theorem}, these are the only homologically non-trivial cases.
 
 \begin{definition} \label{def: Steenrod operations at odd prime}
@@ -113,12 +113,12 @@ Below we present its most common form and refer to Theorem 4.7 in \cite{may1970g
 
 \begin{proof}
 	As described after Definition~\ref{def: Steenrod products}, for any prime $p$ the pair $(A, \theta)$ is an object in May's category $\mathfrak{C}(\mathrm C_p, \infty, \mathbb{F}_p)$.
-	Furthermore, since we are demanding a factorization $\phi \circ \iota$ with $\phi$ an operad map from an $E_\infty$-operad to $\End_A$, this is an \textit{Adem object} in the sense of Definition 4.1 of \cite{may1970general}.
+	Furthermore, since we are demanding a factorization $\phi \circ \iota$ with $\phi$ an operad map from an $E_\infty$-operad to $\End_A$, the pair $(A, \theta)$ is an \textit{Adem object} in the sense of Definition 4.1 of \cite{may1970general}.
 	The statement presented here is stated and proven as part of Theorem 4.7 loc. cit.
 \end{proof}
 
 So far we have considered $\mathrm{C}$-modules, operads and related structures over the category of chain complexes.
-It is also useful to consider them over the category of coalgebras, that is to say, requiring each chain complex to be equipped with a coproduct and all structure maps to be morphisms of coalgebras.
+It is also useful to consider them over the category of coalgebras, that is to say requiring each chain complex to be equipped with a coproduct and all structure maps to be morphisms of coalgebras.
 As described in Definition~1.2 of \cite{may1970general}, the $\mathrm{C}$-module $\mathcal W$ lifts to this category.
 A \textit{comultiplicative May--Steenrod structure} on an operad $\mathcal O$ is a morphism of $\mathrm{C}$-modules $\psi \colon \mathcal W \to \mathcal O$ for which there exists a factorization through an $E_\infty$-operad over the category of coalgebras
 \begin{equation*}
@@ -141,8 +141,9 @@ Chain complexes equipped with a comultiplicative May--Steenrod structure satisfy
 
 \begin{proof}
 	As described after Definition~\ref{def: Steenrod products}, for any prime $p$ the pair $(A, \theta)$ is an object in May's category $\mathfrak{C}(\mathrm C_p, \infty, \mathbb{F}_p)$.
-	Furthermore, since we are demanding a factorization $\phi \circ \iota$ with $\iota$ a quasi-isomorphism in the category of $\mathrm{C}$-modules over the category of coalgebras, this is a \textit{Cartan object} as defined in pag. 161 of \cite{may1970general}.
-	The statement presented here is stated in pag.~165 loc.~cit.
+	Furthermore, since we are demanding a factorization $\phi \circ \iota$ with $\iota$ a quasi-isomorphism in the category of $\mathrm{C}$-modules over the category of coalgebras, this is a \textit{Cartan object} as defined in \cite[p.161]{may1970general}.
+	The statement presented here is stated in page~165 loc.~cit.
 \end{proof}
 
-For the even prime, constructive proofs at the cochain level of the Adem and Cartan relations have been given respectively in \cite{medina2021adem} and \cite{medina2020cartan}.
+For the even prime, effective proofs at the cochain level of the Adem and Cartan relations have been given respectively in \cite{medina2021adem} and \cite{medina2020cartan}.
+Explicitly, these proof construct cochains whose coboundaries descends to the relations in cohomology.

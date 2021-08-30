@@ -40,10 +40,11 @@ Notice that the inclusions $\mathrm{S} \to \mathrm{S} \times \mathrm{S}^{op}$ in
 \begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=tiny]
 & \mathbf{Ch}_R^{\mathrm{S} \times \mathrm{S}^{op}} \arrow[dl, "U_1"', out=-120, in=0] \arrow[dr, "U_2", out=-60, in=180] & \\
-\mathbf{Ch}_R^{\mathrm{S}^{op}} & & \mathbf{Ch}_R^{\mathrm{S}},
+\mathbf{Ch}_R^{\mathrm{S}^{op}} & & \mathbf{Ch}_R^{\mathrm{S}}.
 \end{tikzcd}
 \end{equation*}
-and that for any object $A$ in $\mathbf{Ch}_R$ the canonical \textit{endomorphism bimodule}
+Explicitly, $U_1(\mathcal P)(r) = \mathcal P(r,1)$ and $U_2(\mathcal P)(r) = \mathcal P(1,r)$ for any $\mathcal P$ in $\mathbf{Ch}_R^{\mathrm{S} \times \mathrm{S}^{op}}$.
+Notice that for any object $A$ in $\mathbf{Ch}_R$ the canonical \textit{endomorphism bimodule}
 \begin{equation*}
 \End_A^A(r, s) = \Hom(A^{\otimes r}, A^{\otimes s})
 \end{equation*}
@@ -56,7 +57,7 @@ Using the groupoid automorphism sending every morphisms to its inverse we can id
 for every object $A$ in $\mathbf{Ch}_R$.
 We will use this identification freely in what follows.
 
-A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$-modules such that $\phi(r)$ is a resolution in the category of chain complexes of $R[\Gamma_r]$-modules for each $r \in \mathbb{N}$.
+A \textit{resolution} in $\mathbf{Ch}_R^\Gamma$ is a morphism $\phi$ of $\Gamma$-modules such that $\phi(r)$ is a resolution in the category of chain complexes of $R[\Gamma_r]$-modules for each $r \in \mathbb{N}$, where $\Gamma_r$ denotes $\Gamma(r,r)$.
 A $\Gamma$-module $\mathcal R$ is said to be $E_\infty$ if $\mathcal R(0) = R$ and there exists a resolution $\mathcal R \to \underline{R}$ where $\underline{R}$ is the object in $\mathbf{Ch}_R^\Gamma$ defined by $\underline{R}(r) = R$ and $\underline{R}(\gamma) = \mathrm{id}_R$ for every $r \in \mathbb{N}$ and $\gamma \in \Gamma_r$.
 
 We have the following evident generalization to the context of groupoids of the resolutions introduced in \eqref{eq: minimal resolution}.
@@ -73,8 +74,8 @@ We have the following evident generalization to the context of groupoids of the 
 
 \subsection{Operads and props}
 
-Operads an props are respectively $\mathrm{S}$-modules and $\mathrm{S}$-bimodules enriched with further compositional structure.
-These structures are best understood by abstracting the compositional structure naturally present in the coendomorphism $\mathrm{S}$-module $\End^A$, naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a prop.
+Operads and props are respectively $\mathrm{S}$-modules and $\mathrm{S}$-bimodules enriched with further compositional structure.
+These structures are best understood by abstracting the compositional structure naturally present in the endomorphism $\mathrm{S}$-module $\End_A$ (or $\End^A$), naturally an operad, and the endomorphism $\mathrm{S}$-bimodule $\End_A^A$, naturally a prop.
 
 Succinctly, an operad $\mathcal O$ is an $\mathrm{S}$-module together with a collection of $R$-linear maps
 \begin{equation*}
